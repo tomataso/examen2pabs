@@ -1,0 +1,119 @@
+<!-- <div class="wrapper">
+  <h3 class="titulo-lista">Inicio de Sesión</h3>
+
+  <form id="FormularioCliente">
+    <form action="">
+      <div class="field">
+        <input type="text" name="txtCorreoInicio" id="txtCorreoInicio" placeholder="Correo Electronico">
+        <label for="txtCorreoInicio">Correo electrónico</label>
+      </div>
+      <div class="field">
+        <input type="password" name="txtContrasennaInicio" id="txtContrasennaInicio" placeholder="Contraseña">
+        <label for="txtContrasennaInicio">Contraseña</label>
+      </div>
+    </form>
+    <p id="error" class="ocultar mensajeError">Datos inválidos, por favor intente nuevamente</p>
+    <button type="button" id="btnInicioSesion">
+      <a href="principalCliente"></a>Iniciar Sesion</button>
+  </form>
+  <a class="botonolvidarcontrasenna" href="/accounts/password/reset/">¿Olvidaste tu contraseña?</a>
+</div>
+<script>
+    $(document).ready(function () {
+      inicioSesionInit();
+      // ListarClientes();
+    });
+  </script>
+ -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="wrapper">
+    <h3 class="titulo-lista">Perfil de cliente</h3>
+  
+    <form id="FormularioCliente">
+  
+      <div class="field">
+        <input type="number" placeholder="Cédula Jurídica" id="txtCedula">
+        <label for="txtCedula">Cédula Jurídica</label>
+      </div>
+  
+      <div class="field">
+        <input type="text" placeholder="Nombre de la empresa" id="txtNombre">
+        <label for="txtNombre">Nombre de empresa</label>
+      </div>
+  
+      <div class="field">
+        <input type="text" placeholder="Provincia" id="txtProvincia">
+        <label for="txtProvincia">Provincia</label>
+      </div>
+  
+      <div class="field">
+        <input type="text" placeholder="Cantón" id="txtCanton">
+        <label for="txtCanton">Cantón</label>
+      </div>
+  
+      <div class="field">
+        <input type="text" placeholder="Distrito" id="txtDistrito">
+        <label for="txtDistrito">Distrito</label>
+      </div>
+  
+  
+      <div class="field">
+        <input type="text" placeholder="Primer Nombre de contacto" id="txtPrimerNombre">
+        <label for="txtPrimerNombre">Primer Nombre de contacto</label>
+      </div>
+  
+      <div class="field">
+        <input type="text" placeholder="Primer Apellido de contacto" id="txtPrimerApellido">
+        <label for="txtPrimerApellido">Primer Apellido de contacto</label>
+      </div>
+  
+      <div class="field">
+        <input type="number" placeholder="Teléfono de contacto" id="txtTelefono">
+        <label for="txtTelefono">Teléfono de Contacto</label>
+      </div>
+  
+      <div class="field">
+        <input type="tel" name="txtCorreo" id="txtCorreo" placeholder="Correo electrónico de contacto">
+        <label for="txtCorreo">Correo electrónico de contacto</label>
+      </div>
+  
+      <div class="field">
+        <div id="map" style="width: 100%;height: 300px; margin-top: 100px"></div>
+      </div>
+  
+      <div class="buttonContainer">
+        <button type="button" id="btnPerfil" class="btn-registrar">Perfil</button>
+      </div>
+    </form>
+  </div>
+  
+  <script>
+      $(document).ready(function () {
+        ClienteRegistrarInit();
+      });
+  </script>
+  
+  
+  
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+          <script async defer src="https://maps.googleapis.com/maps/api/js?AIzaSyDLH5HFcOgm52uBx3KmNAcAIVGU6b0D-FE&callback=initMap"
+      type="text/javascript"></script>
+  

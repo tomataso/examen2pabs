@@ -1,0 +1,121 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9"
+	crossorigin="anonymous">
+	<link href='../../img/CSHLogo.png' rel='shortcut icon' type='image/png'>
+	<link rel="stylesheet" href="../../css/generales/reset.css">
+	<link rel="stylesheet" href="../../css/generales/generales.css">
+	<link rel="stylesheet" href="../../css/listas/tabla_general.css">
+	<link rel="stylesheet" href="../../css/formularios/formularios_general.css">
+	<title>Cenfotec Software House</title>
+</head>
+<header>
+	<div class="contactenosHeader">
+		<div>
+			<a href="../general/index_administrador.html">
+				<img src="../../img/CSHLogo.png" alt="Cenfotec Software House Logo">
+			</a>
+		</div>
+		<a href="../general/index.html" id="btnSalir" class="nav-header">Salir <i class="fas fa-sign-out-alt"></i></a>
+	</div>
+</header>
+
+<body>
+
+	<div class="wrapper blanco">
+		<div class="menuCont">
+			<input type="checkbox" id="check" onclick="">
+			<label for="check" id="icone"><i class="fas fa-bars"></i></label>
+			<div class="bars">
+				<nav>
+					<a href="../proyecto/proyecto_listar_cliente.html" id="btnListarProyectosIndex"><div class="link">Proyectos</div></a>
+					<a href="../tiquete/tiquete_registrar_cliente.html" id="btnRegistrarTiquetesIndex"><div class="link">Registrar tiquete</div></a>
+					<a href="../tiquete/tiquete_listar_cliente.html" id="btnListarTiquetesIndex"><div class="link">Tiquetes</div></a>
+					<a href="../mensaje/mensaje_mensaje_crear.html" id="btnCrearMensajeIndex"><div class="link">Crear mensaje</div></a>
+					<a href="../mensaje/mensaje_recibido_listar.html" id="btnMensajesRecibidosIndex"><div class="link">Mensajes recibidos</div></a>	
+					<a href="../mensaje/mensaje_enviado_listar.html" id="btnMensajesEnviadosIndex"><div class="link">Mensajes enviados</div></a>
+				</nav>
+			</div>
+		</div>
+
+		<div class="main">
+			<div id="contenedorPrincipal" class="CPpositionOff">
+
+        <!-- Agregar wrapper aquí -->
+        <div class="wrapper">
+            <form>
+                <h3 class="titulo-lista">Proyecto</h3>
+    
+                <div class="field">
+                  <input type="text" id="codigoProyecto" placeholder="Código"></input>
+                  <label for="codigoProyecto">Código</label>
+                </div>
+             
+                <div class="field">
+                  <input type="date" id="fechaProyecto" placeholder="Fecha de creación"></input>
+                  <label for="fechaProyecto">Fecha de creación</label>
+                </div>  
+    
+                <div class="field">
+                  <select id="clienteProyecto">
+                    <option value="cliente">Seleccione un cliente</option>
+                  </select> 
+                  <label for="clienteProyecto">Cliente</label>
+                </div> 
+                
+                <div class="field">
+                  <input type="text" id="nombreProyecto" placeholder="Nombre de proyecto">
+                  <label for="nombreProyecto">Nombre de proyecto</label>
+                </div>  
+                
+                <div class="field">
+                  <textarea id="descripcionProyecto" rows="5" placeholder="Descripción"></textarea>
+                  <label for="descripcionProyecto">Descripción</label>
+                </div>
+                
+                <div class="field">
+                  <select id="estadoProyecto">
+                    <option value="estado">Seleccione un estado</option>
+                    <option value="Aceptado">Aceptado</option>
+                    <option value="En desarrollo">En desarrollo</option>
+                    <option value="En revisión">En revisión</option>
+                    <option value="Concluido">Concluido</option>
+                  </select>
+                  <label for="estadoProyecto">Estado</label> 
+                </div>
+                
+                <div class="field">
+                  <input type="date" id="fechaEntrega" placeholder="Fecha de entrega">
+                  <label for="fechaEntrega">Fecha de entrega</label>
+                </div> 
+    
+                <button type="button" id="btnProfesoresProyecto" class="btn-registrar">Profesores Asignados</button> 
+                <button type="button" id="btnEstudiantesProyecto" class="btn-registrar">Estudiantes Asignados</button> 
+    
+            </form>
+        </div>
+			</div>
+		<script src="https://cdn.jsdelivr.net/npm/sweetalert2"></script>
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js" 
+		integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+		crossorigin="anonymous"></script>
+		<script src="../../js/jquery-3.3.1.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+		crossorigin="anonymous"></script>
+		<script src="../../js/inicioSesion/login.service.js"></script>
+		<script src="../../js/inicioSesion/auth.service.js"></script>
+    <script src="../../js/inicioSesion/login.controller.js"></script>
+    <script src="../../js/proyecto/servicio_proyecto_mostrar.js"></script>
+    <script src="../../js/proyecto/controlador_proyecto_mostrar_cliente.js"></script>
+		</div>
+	</div>
+
+</body>
+
+</html>

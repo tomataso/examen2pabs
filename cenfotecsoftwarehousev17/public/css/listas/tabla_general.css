@@ -1,0 +1,175 @@
+/* Estilos generales---------------------------------------------------------------------- */
+table{
+  width: 100%;
+}
+th { 
+  background: #292929; 
+  color: #fbb803; 
+  height: 30px;
+  text-align: justify;
+}
+
+td, th, tr { 
+  padding: 1%; 
+  border: none;
+  text-align: justify;
+  white-space: pre-line;
+  vertical-align: middle;
+  width: auto;
+}
+/* table td:first-child {
+	width: 100px;
+}
+ 
+table td:nth-child(2) {
+	width: 100px;
+}
+ 
+table td:nth-child(3) {
+	width: 100px;
+}
+table td:nth-child(4) {
+	width: 200px;
+}
+table td:nth-child(5) {
+	width: 100px;
+} 
+table td:nth-child(6) {
+	width: 150px;
+} 
+table td:nth-child(7) {
+	width: 100px;
+} 
+table td:last-child {
+	width: 50px;
+} */
+
+/* Estilos clases ---------------------------------------------------------------------------------------- */
+
+.wrapper-header{
+  display: flow-root;
+}
+
+.titulo-lista  {
+  letter-spacing: 2pt;
+  position: relative;
+  color: #fbb803;
+  width: 100%;
+  margin: 1%;
+  margin-bottom: 1%;
+  margin-top: 1%;
+  font-size: 2.5em;
+  text-align: center;
+}
+
+.btn-list {
+  top: 18%;
+  border: none;
+  cursor: pointer;
+  width: 54%;
+  padding: 2%;
+  margin: 0.5%;
+  font-size: 15px;
+  color: #fff;
+  background-color: #474749;
+}
+
+.esconder{
+  display: none;
+}
+
+.filtro {
+  position: relative;
+  /*float: left; */
+  right: 135px;
+  width: 59%;
+  padding-bottom: 7%;
+}
+a.fa-trash {
+  cursor: pointer;
+  color: #d83504;
+  padding-left: 11%;
+}
+a.fa-eye {
+  /* color: #000; */
+  cursor: pointer;
+  margin: 4%;
+}
+
+a.fa-clock {
+
+  cursor: pointer;
+  margin: 4%;
+}
+
+a.fa-list-ul {
+
+  cursor: pointer;
+  margin: 4%;
+}
+
+.buscador-select{
+  display: inline;
+}
+
+.select-header{
+  left: 45%;
+  top: 10%;
+  position: absolute;
+  text-transform: uppercase;
+}
+
+.usuarios-listar{
+  float: left;
+  padding: 2%;
+}
+
+
+/* Estilos pseudo clases ------------------------------------------------------------------------------------ */
+
+tr:nth-of-type(odd) { 
+  background: #dedcdc80; 
+  color: #000;
+}
+tr:nth-of-type(even){
+	color: #000;
+}
+
+tr:hover{
+  color: #fff;
+  background-color: #000;
+  opacity: 0.5;
+}
+
+.btn-list:hover {
+	background-color: #596275;
+}
+
+
+input:focus:invalid,
+textarea:focus:invalid {
+    /* Cuando en el buscador el campo es invalido*/
+    background: #fff url(../img/invalid3.png) no-repeat 98% center;
+    box-shadow: 0 0 5px #ed2024;
+    border-color: #ed2024;
+}
+input:required:valid,
+textarea:required:valid {
+    /* when a field is considered valid by the browser */
+    background: #fff url(../img/valid3.png) no-repeat 98% center;
+    box-shadow: 0 0 5px #5cd053;
+    border-color: #28921f;
+}
+
+/* Estilos pseudo elementos ------------------------------------------------------------------- */
+
+
+
+
+#tblEstudiantesAsignados, #tblEstudiantes{
+  margin-top: 5%;
+  top: 25%;
+  margin-left: 5%;
+  width: 90%;
+}
+

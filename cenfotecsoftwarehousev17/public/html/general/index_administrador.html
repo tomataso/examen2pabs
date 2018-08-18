@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9"
+	crossorigin="anonymous">
+	<link href='../../img/CSHLogo.png' rel='shortcut icon' type='image/png'>
+	<link rel="stylesheet" href="../../css/generales/reset.css">
+	<link rel="stylesheet" href="../../css/generales/generales.css">
+	<link rel="stylesheet" href="../../css/listas/tabla_general.css">
+	<link rel="stylesheet" href="../../css/formularios/formularios_general.css">
+	<title>Cenfotec Software House</title>
+</head>
+<header>
+	<div class="contactenosHeader">
+		<div>
+			<a href="../general/index_administrador.html">
+				<img src="../../img/CSHLogo.png" alt="Cenfotec Software House Logo">
+			</a>
+		</div>
+		<a href="../general/index.html" id="btnSalir" class="nav-header">Salir <i class="fas fa-sign-out-alt"></i></a>
+	</div>
+</header>
+
+<body>
+
+	<div class="wrapper">
+		<div class="menuCont">
+			<input type="checkbox" id="check" onclick="">
+			<label for="check" id="icone"><i class="fas fa-bars"></i></label>
+			<div class="bars">
+				<nav>
+					<a href="../sistema/sistema_registrar.html" id="btnEstudiantesIndex"><div class="link">Configuraciones generales</div></a>
+					<a href="../usuario/usuario_listar.html" id="btnUsuariosIndex"><div class="link">Usuarios</div></a>
+					<a href="../proyecto/proyecto_registrar.html" id="btnRegistrarProyectosIndex"><div class="link">Registrar proyecto</div></a>
+					<a href="../proyecto/proyecto_listar_admin.html" id="btnListarProyectosIndex"><div class="link">Proyectos</div></a>
+					<a href="../profesor/profesor_registrar.html" id="btnRegistrarProfesorIndex"><div class="link">Registrar profesor</div></a>
+					<a href="../profesor/profesor_listar.html" id="btnListarProfesorIndex"><div class="link">Profesores</div></a>
+					<a href="../estudiante/indexRegEstud.html" id="btnRegistrarEstudianteIndex"><div class="link">Registrar estudiante</div></a>
+					<a href="../estudiante/indexTablaEstud.html" id="btnListarEstudianteIndex"><div class="link">Estudiantes</div></a>	
+					<a href="../cliente/cliente_registrar.html" id="btnRegistrarClienteIndex"><div class="link">Registrar cliente</div></a>
+					<a href="../cliente/cliente_listar.html" id="btnListarClienteIndex"><div class="link">Clientes</div></a>
+					<a href="../reporte/reporte_admin.html" id="btnReporteIndex"><div class="link">Reporte horas estudiante</div></a>
+					<a href="../tiquete/tiquete_listar_administrador.html" id="btnListarTiquetesIndex"><div class="link">Tiquetes</div></a>
+					<a href="../mensaje/mensaje_crear.html" id="btnCrearMensajeIndex"><div class="link">Crear mensaje</div></a>
+					<a href="../mensaje/mensaje_recibido_listar.html" id="btnMensajesRecibidosIndex"><div class="link">Mensajes recibidos</div></a>	
+					<a href="../mensaje/mensaje_enviado_listar.html" id="btnMensajesEnviadosIndex"><div class="link">Mensajes enviados</div></a>
+				</nav>
+			</div>
+		</div>
+
+		<div class="main">
+			<div id="contenedorPrincipal" class="CPpositionOn">
+
+				<div class="wrapper"> 
+					<div class="tituloPrincipal divisor">
+						<h1><span>CENFOTEC</span>SOFTWARE HOUSE</h1>
+						<p class="slogan">Su casa para recibir servicios profesionales en tecnologías de información, de gran calidad, diseñados y construidos por estudiantes y profesores de la <strong class="strong">Universidad Cenfotec</strong> para la comunidad.</p>
+					</div>
+					<div class="info divisor">
+						<div class="card">
+							<img class="cardFoto" src="../../img/maria.jpg" alt="perfil_maria">
+							<div class="container">
+								<div class="logoContainer">
+									<img src="../../img/codecLogo.png" alt="codec_logo">
+								</div>
+								<a href="../fichatecnica/ficha_tecnica.html" class="buttonDash btnInfo">Conózcanos</a>
+							</div>
+						</div>
+						<div class="card">
+							<img class="cardLogo" src="../../img/CSHLogo.png" alt="Cenfotec Software House Logo">
+							<div class="container">
+									<p><span>CENFOTEC </span>SOFTWARE HOUSE</p>
+								<a href="http://www.cenfotecsoftwarehouse.com/" class="buttonDash btnCSH">Ir</a>
+							</div>
+						</div>
+						<div class="card">
+								<img class="cardGuia" src="../../img/listaIcon.png" alt="">
+							<div class="container">
+									<p>GUÍA DE USO</p>
+								<a href="../general/guia.html" class="buttonDash btnGuia">Ver</a>
+							</div>
+						</div>
+					</div>
+				
+			</div>
+		</div>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.0.5/sweetalert2.all.js"></script>
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js" 
+		integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+		crossorigin="anonymous"></script>
+		<script src="../../js/jquery-3.3.1.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+		crossorigin="anonymous"></script>
+		<script src="../../js/inicioSesion/login.service.js"></script>
+		<script src="../../js/inicioSesion/auth.service.js"></script>
+		<script src="../../js/inicioSesion/login.controller.js"></script>
+		</div>
+	</div>
+
+</body>
+
+</html>
