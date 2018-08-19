@@ -18,7 +18,7 @@ const inputCantonpersona = document.querySelector('#txtCantonpersona');
 const inputDistritopersona = document.querySelector('#txtDistritopersona');
 const inputDireccionExactapersona = document.querySelector('#txtDireccionExactapersona');
 
-const inputAExperienciapersona = document.querySelector('#txtFechaNacimiento');
+const inputFechaNacimiento = document.querySelector('#txtFechaNacimiento');
 const inputTipopersona = document.querySelector('#txtSexo');
 const inputContrasennapersona = document.querySelector('#txtContrasenna');
 
@@ -135,7 +135,7 @@ function ftnMostrarpersona (idpersona,persona){
     inputDistritopersona.value = personaftnSeleccionado.Distrito;
     inputDireccionExactapersona.value = personaftnSeleccionado.DireccionExacta;
 
-    inputAExperienciapersona.value = personaftnSeleccionado.Aexperiencia;
+    inputFechaNacimiento.value = personaftnSeleccionado.FechaN;
     inputTipopersona.value = personaftnSeleccionado.Tipopersona;
     inputContrasennapersona.value = personaftnSeleccionado.Contrasenna;
 

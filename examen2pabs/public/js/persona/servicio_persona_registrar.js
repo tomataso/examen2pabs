@@ -22,7 +22,7 @@ function registrarpersona(paInfopersona){
             Distrito : paInfopersona[7],
             DireccionExacta : paInfopersona[8],
            // GAcademico : paInfopersona[9],
-            Aexperiencia : paInfopersona[9],
+           FechaN : paInfopersona[9],
             // CImpartidos : paInfopersona[11],
             Tipopersona : paInfopersona[10],
             Desactivado : paInfopersona[11],

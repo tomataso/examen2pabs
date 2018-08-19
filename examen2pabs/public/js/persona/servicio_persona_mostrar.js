@@ -53,7 +53,7 @@ function actualizarpersonaG(ppersona){
             Distrito : ppersona[8],
             DireccionExacta : ppersona[9],
 
-            Aexperiencia : ppersona[10],
+            FechaN : ppersona[10],
             Tipopersona : ppersona[11],
             Contrasenna : ppersona[12]
         }

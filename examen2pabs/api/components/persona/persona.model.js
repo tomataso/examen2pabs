@@ -14,7 +14,7 @@ let personaSchema = new mongoose.Schema({
     Distrito : {type : String, required: true},
     DireccionExacta : {type : String, required: true},
 
-
+    FechaN : {type : String, required: true},
 
    
 

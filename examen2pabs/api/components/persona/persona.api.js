@@ -18,7 +18,7 @@ module.exports.registrar = function(req, res){
         DireccionExacta : req.body.DireccionExacta,
 
        
-        Aexperiencia :  req.body.Aexperiencia,
+        FechaN :  req.body.FechaN,
        
 
         Tipopersona : req.body.Tipopersona,

@@ -27,15 +27,7 @@ router.route('/desactivarpersona')
     });
 
 
-router.route('/agregarTitulo')
-    .post(function (req, res) {
-        persona.agregarGradoAcademicopersona(req, res);
-    });
 
-router.route('/agregarCursoI')
-    .post(function (req, res) {
-        persona.agregarCursosImpartidospersona(req, res);
-    });
 
 
 router.route('/actualizarpersona')
@@ -43,10 +35,6 @@ router.route('/actualizarpersona')
         persona.actualizarpersona(req, res);
     });
 
-    router.route('/eliminarTitulo')
-    .post(function (req, res) {
-        persona.borrarTitulo(req, res);
-    });
 
 
 

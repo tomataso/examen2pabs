@@ -19,7 +19,7 @@ const inputCorreopersona = document.querySelector('#txtCorreopersona');
 const inputDireccionExactapersona = document.querySelector('#txtDireccionExactapersona');
 
 //inputGAcademicopersona = document.querySelector('#txtGAcademico');
-const inputAExperienciapersona = document.querySelector('#txtFechaNacimiento');
+const inputFechaN= document.querySelector('#txtFechaNacimiento');
 //inputCImpartidospersona = document.querySelector('#txtCImpartidos');
 
 const inputTipopersona = document.querySelector('#txtSexo'); //Como obtener los datos de un selection #txtSexo
@@ -200,13 +200,13 @@ function obtenerDatospersona() {
     let sDireccionExacta = inputDireccionExactapersona.value;
 
     // let sGAcademico = inputGAcademicopersona.value;
-    let sAexperiencia = Number(inputAExperienciapersona.value);
+    let FechaN = inputAExperienciapersona.value;
     // let sCImpartidos = inputCImpartidospersona.value;
     let sTipopersona = inputTipopersona.value;
     let sDesactivado = false;
 
 
-    infopersona.push(sNombre, sApellido, sCedula, sTelefono, sCorreo, sProvincia, sCanton, sDistrito, sDireccionExacta, sAexperiencia, sTipopersona, sDesactivado);
+    infopersona.push(sNombre, sApellido, sCedula, sTelefono, sCorreo, sProvincia, sCanton, sDistrito, sDireccionExacta, FechaN, sTipopersona, sDesactivado);
 
     bError = validarpersona();
 
@@ -247,7 +247,7 @@ function imprimirListapersona() {
         let cApellido = fila.insertCell();
         let cTelefono = fila.insertCell();
         let cCorreo = fila.insertCell();
-        let cGAcademico = fila.insertCell();
+        
 
         cNombre.innerHTML = listapersona[i]['Nombre'];
         cApellido.innerHTML = listapersona[i]['Apellido'];
@@ -358,12 +358,7 @@ function validarpersona() {
     //Validación del Fecha de Nacimiento
     // Ponerle Validacion de Numeros || (regexSoloNumeros.test(inputTelefonopersona.value) == false)
 
-    if (inputAExperienciapersona.value == '') {
-        inputAExperienciapersona.classList.add('error-input');
-        bError = true;
-    } else {
-        inputAExperienciapersona.classList.remove('error-input');
-    }
+   
 
     /*
     //Validación de Cursos Impartidos
@@ -403,7 +398,7 @@ function limpiarFormulario() {
     inputDireccionExactapersona.value = '';
 
     //inputGAcademicopersona.value = '';
-    inputAExperienciapersona.value = '';
+    inputFechaN.value = '';
     //inputCImpartidospersona.value = '';
 }
 
