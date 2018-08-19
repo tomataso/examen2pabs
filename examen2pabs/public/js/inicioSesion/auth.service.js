@@ -47,7 +47,7 @@ function validarMenu (){
 
     let menuAdmi = ["Configuraciones generales","Usuarios",
     "Registrar proyecto","Proyectos","Registrar persona",
-    "personaes","Registrar estudiante","Estudiantes",
+    "persona","Registrar estudiante","Estudiantes",
     "Registrar hotel","hotels","Reporte horas estudiante",
     "Tiquetes","Crear mensaje","Mensajes recibidos","Mensajes enviados"];
     let menuEstud = ["Proyectos","Reporte horas proyecto","Tiquetes",

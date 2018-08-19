@@ -5,12 +5,12 @@ const router = express.Router();
 const persona = require('./persona.api');
 
 
-router.route('/registrarpersonaes')
+router.route('/registrarpersona')
     .post(function (req, res) {
         persona.registrar(req, res);
     });
 
-router.route('/listarpersonaes')
+router.route('/listarpersona')
     .get(function (req, res) {
         persona.listar(req, res);
     });

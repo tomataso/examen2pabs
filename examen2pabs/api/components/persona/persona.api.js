@@ -44,8 +44,8 @@ module.exports.registrar = function(req, res){
 
 module.exports.listar = function(req, res){
     personaModel.find().then(
-        function(personaes){
-            res.send(personaes);
+        function(persona){
+            res.send(persona);
         });
 };
 

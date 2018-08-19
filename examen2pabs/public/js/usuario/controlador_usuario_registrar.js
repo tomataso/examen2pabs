@@ -49,7 +49,7 @@ let listaObjetos = null;
             idObjeto = [listaObjetos[listaObjetos.length-1]['_id'],listaObjetos[listaObjetos.length-1]['Cedula'],"estudiante"];
             break;
         case "persona":
-            listaObjetos = listapersonaes();
+            listaObjetos = listapersona();
             idObjeto = [listaObjetos[listaObjetos.length-1]['_id'],listaObjetos[listaObjetos.length-1]['Cedula'],"persona"];
             break;
     }
