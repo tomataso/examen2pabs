@@ -1,32 +1,5 @@
 'use strict';
 
-function actualizarEstadohotel(photel, estado) {
-    let respuesta = '';
-    let peticion = $.ajax({
-        url: 'http://localhost:4000/api/cambiar_estado_hotel',
-        type: 'post',
-        contentType: 'application/x-www-form-urlencoded; charset=utf-8',
-        dataType: 'json',
-        async: false,
-        data: {
-            _id: photel._id,
-            Desactivado: estado,
-        }
-    });
-
-    peticion.done(function (response) {
-        console.log('Registro bien');
-        respuesta = response;
-    });
-
-    peticion.fail(function (response) {
-        console.log('Registro mal');
-    });
-
-    return respuesta;
-}
-
-
 function obtenerListahotels(){
     let lista = [];
 
@@ -67,8 +40,8 @@ function registrarhotel(photel){
         data:{
             Nombre : photel[0],
             Provincia : photel[1],
-            Distrito : photel[2],
-            Canton : photel[3],
+            Distrito : photel[3],
+            Canton : photel[2],
             PrimerNombre : photel[4],
             PrimerApellido : photel[5],
             Telefono : photel[6],
@@ -76,40 +49,6 @@ function registrarhotel(photel){
             Ubicacion : photel[8], 
             Contrasenna: contrasennaAutogenerada,
             Desactivado : photel[9],
-        }
-      });
-    
-      peticion.done(function(response){
-       respuesta = response;
-      });
-    
-      peticion.fail(function(response){
-       
-      });
-
-      return respuesta;
-}
- 
-function actualizarhotel(photel){
-    let respuesta = '';
-    // let contrasennaAutogenerada = ftnGeneradorContrasenna();
-    let peticion = $.ajax({
-        url : 'http://localhost:4000/api/actualizar_hotel',
-        type : 'post',
-        contentType : 'application/x-www-form-urlencoded; charset=utf-8',
-        dataType : 'json',
-        async : false,
-        data:{
-            Nombre : photel[0],
-            Provincia : photel[1],
-            Distrito : photel[2],
-            Canton : photel[3],
-            PrimerNombre : photel[4],
-            PrimerApellido : photel[5],
-            Telefono : photel[6],
-            Correo : photel[7],
-            Ubicacion : photel[8], 
-            _id : photel[9],
         }
       });
     
@@ -135,6 +74,34 @@ function ftnGeneradorContrasenna() {
     return retVal;
 }
 
+
+function obtenerPersonaPorId(pid){
+    let usuario = '';
+    let peticion = $.ajax({
+        url : 'http://localhost:4000/api/buscar_usuario_id', // url lo copio del route
+        type : 'post',
+        contentType : 'application/x-www-form-urlencoded; charset=utf-8',
+        dataType : 'json',
+        async : false,
+        data:{ //asegurarme de que en el user.api.js este con el guion _
+            _id : pid
+        }
+      });
+    
+      peticion.done(function(response){
+        usuario = response;
+        
+      });
+    
+      peticion.fail(function(response){
+      });
+
+      
+      
+      return usuario;
+};
+
+
 function actualizarPersona(photel){
     let respuesta = '';
     let peticion = $.ajax({
@@ -147,8 +114,8 @@ function actualizarPersona(photel){
             _id : _pid,
             Nombre : photel[0],
             Provincia : photel[1],
-            Distrito : photel[2],
-            Canton : photel[3],
+            Distrito : photel[3],
+            Canton : photel[2],
             PrimerNombre : photel[4],
             PrimerApellido : photel[5],
             Telefono : photel[6],
@@ -169,6 +136,33 @@ function actualizarPersona(photel){
 
       return respuesta;
 };
+
+
+function desactivarhotel(photel){
+    let respuesta = '';
+    let peticion = $.ajax({
+        url : 'http://localhost:4000/api/desactivarhotel',
+        type : 'post',
+        contentType : 'application/x-www-form-urlencoded; charset=utf-8',
+        dataType : 'json',
+        async : false,
+        data:{
+            _id : photel[0],
+            desactivado : photel[1]
+        }
+      });
+    
+      peticion.done(function(response){
+       respuesta = response;
+      });
+    
+      peticion.fail(function(response){
+       
+      });
+
+      return respuesta;
+}
+
 
 function borrarPersonaPorId(pid){ 
     let respuesta = '';
@@ -193,3 +187,5 @@ function borrarPersonaPorId(pid){
 
       return respuesta;
 }
+
+

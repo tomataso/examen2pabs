@@ -1,0 +1,181 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9"
+	crossorigin="anonymous">
+	<link href='../../img/CSHLogo.png' rel='shortcut icon' type='image/png'>
+	<link rel="stylesheet" href="../../css/generales/reset.css">
+	<link rel="stylesheet" href="../../css/generales/generales.css">
+	<link rel="stylesheet" href="../../css/listas/tabla_general.css">
+	<link rel="stylesheet" href="../../css/formularios/formularios_general.css">
+	<title>Cenfotec Beach House</title>
+</head>
+<header>
+	<div class="contactenosHeader">
+		<div>
+			<a href="../general/index_administrador.html">
+				<img src="../../img/CSHLogo.png" alt="Cenfotec Beach House Logo">
+			</a>
+		</div>
+		<a href="../general/index.html" id="btnSalir" class="nav-header">Salir <i class="fas fa-sign-out-alt"></i></a>
+	</div>
+</header>
+
+<body>
+
+	<div class="wrapper blanco">
+		<div class="menuCont">
+			<input type="checkbox" id="check" onclick="">
+			<label for="check" id="icone"><i class="fas fa-bars"></i></label>
+			<div class="bars">
+				<nav id="menuAdministrador" class="hideMenu">
+					<a href="../usuario/usuario_listar.html" id="btnUsuariosIndex"><div class="link">Usuarios</div></a>
+					<a href="../persona/persona_registrar.html" id="btnRegistrarpersonaIndex"><div class="link">Registrar persona</div></a>
+					<a href="../persona/persona_listar.html" id="btnListarpersonaIndex"><div class="link">persona</div></a>
+	
+					<a href="../hotel/hotel_registrar.html" id="btnRegistrarhotelIndex"><div class="link">Registrar Hotel</div></a>
+					<a href="../hotel/hotel_listar.html" id="btnListarhotelIndex"><div class="link">Hoteles</div></a>
+				</nav>
+				<nav id="menupersona" class="hideMenu">
+					<a href="../usuario/usuario_listar.html" id="btnUsuariosIndex"><div class="link">Usuarios</div></a>
+					<a href="../persona/persona_registrar.html" id="btnRegistrarpersonaIndex"><div class="link">Registrar persona</div></a>
+					<a href="../persona/persona_listar.html" id="btnListarpersonaIndex"><div class="link">persona</div></a>
+	
+					<a href="../hotel/hotel_registrar.html" id="btnRegistrarhotelIndex"><div class="link">Registrar Hotel</div></a>
+					<a href="../hotel/hotel_listar.html" id="btnListarhotelIndex"><div class="link">Hoteles</div></a>
+				</nav>
+				<nav id="menuhotel" class="hideMenu">
+					<a href="../usuario/usuario_listar.html" id="btnUsuariosIndex"><div class="link">Usuarios</div></a>
+					<a href="../persona/persona_registrar.html" id="btnRegistrarpersonaIndex"><div class="link">Registrar persona</div></a>
+					<a href="../persona/persona_listar.html" id="btnListarpersonaIndex"><div class="link">persona</div></a>
+	
+					<a href="../hotel/hotel_registrar.html" id="btnRegistrarhotelIndex"><div class="link">Registrar Hotel</div></a>
+					<a href="../hotel/hotel_listar.html" id="btnListarhotelIndex"><div class="link">Hoteles</div></a>
+				</nav>
+				<nav id="menuEstudiante" class="hideMenu">
+					<a href="../usuario/usuario_listar.html" id="btnUsuariosIndex"><div class="link">Usuarios</div></a>
+					<a href="../persona/persona_registrar.html" id="btnRegistrarpersonaIndex"><div class="link">Registrar persona</div></a>
+					<a href="../persona/persona_listar.html" id="btnListarpersonaIndex"><div class="link">persona</div></a>
+	
+					<a href="../hotel/hotel_registrar.html" id="btnRegistrarhotelIndex"><div class="link">Registrar Hotel</div></a>
+					<a href="../hotel/hotel_listar.html" id="btnListarhotelIndex"><div class="link">Hoteles</div></a>
+				</nav>
+			</div>
+		</div>
+
+		<div class="main">
+			<div id="contenedorPrincipal" class="CPpositionOff">
+
+                        <!-- Agregar wrapper aquí -->
+                        <div class="wrapper">
+                                    <h3 class="titulo-lista">Registro de persona</h3>
+                                    
+                            
+                                    <div class="field">
+                                                <input type="number" id="txtCedulapersona" placeholder="Cedúla"></input>
+                                                <label for="txtCedulapersona">Cédula</label>
+                                    </div>
+                                    
+                                    <div class="field">
+                                          <input type="text" id="txtNombrepersona" placeholder="Nombre"></input>
+                                          <label for="txtNombrepersona">Nombre</label>
+                                    </div>
+                              
+                                    <div class="field">
+                                          <input type="text" id="txtApellidopersona" placeholder="Apellido"></input>
+                                          <label for="txtApellidopersona">Apellidos</label>
+                                    </div>
+                              
+                              
+                              
+                                    <div class="field">
+                                          <input type="number" id="txtTelefonopersona" placeholder="Teléfono"></input>
+                                          <label for="txtTelefonopersona">Teléfono</label>
+                                    </div>
+                              
+                                     
+                                    <div class="field">
+                                          <input type="email" id="txtCorreopersona" placeholder="Correo Electrónico"></input>
+                                          <label for="txtCorreopersona">Correo Electrónico</label>
+                                    </div>
+
+                                    <div class="field">
+                                          
+                                          <select id="txtProvinciapersona">
+                                              <option value="">Seleccione una provincia</option>
+                                              <option value="San José">San José</option>
+                                              <option value="Cartago">Cartago</option>
+                                              <option value="Alajuela">Alajuela</option>
+                                              <option value="Heredia">Heredia</option>
+                                              <option value="Guanacaste">Guanacaste</option>
+                                              <option value="Puntarenas">Puntarenas</option>
+                                              <option value="Limón">Limón</option>
+                                          </select>
+                                          <label for="txtSexo">Provincia</label> 
+                                      </div>
+
+                                      <div class="field" >
+                                          <select id="txtCantonpersona" >
+                                              <option value="">Seleccione un cantón</option>
+                                          </select>
+                                          <label for="">Cantón</label> 
+                                      </div>
+
+                                      <div class="field">
+                                          <select id="txtDistritopersona">
+                                              <option value="">Seleccione un distrito</option>
+                                          </select>
+                                          <label for="">Distrito</label> 
+                                      </div>
+
+
+                                    <div class="field">
+                                          <input type="text" id="txtDireccionExactapersona" placeholder="Dirección Exacta"></input>
+                                          <label for="txtDireccionExactapersona">Dirección Exacta</label>
+                                    </div>
+                              
+                              
+                              
+                                    <div class="field">
+                                          <input type="date" id="txtFechaNacimiento" placeholder="Fecha de Nacimiento"></input>
+                                          <label for="txtFechaNacimiento">Fecha de Nacimiento</label>
+                                    </div>
+                              
+                     
+                              
+                               <div class="field">
+                                    <select id="txtSexo">
+                                          <option value="ambos">Secreto</option>
+                                          <option value="hombre">Hombre</option>
+                                          <option value="mujer">Mujer</option>
+                                    </select>
+                                    <label for="txtSexo">Sexo</label> 
+                              </div>
+                              
+                                    <button type="button" id="btnRegistrarpersona" class="btn-registrar">Registrar</button>
+                              
+                              </div>
+			</div>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.0.5/sweetalert2.all.js"></script>
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js" 
+		integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+		crossorigin="anonymous"></script>
+		<script src="../../js/jquery-3.3.1.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+		crossorigin="anonymous"></script>
+		<script src="../../js/inicioSesion/login.service.js"></script>
+		<script src="../../js/inicioSesion/auth.service.js"></script>
+            <script src="../../js/inicioSesion/login.controller.js"></script>
+            <script src="../../js/persona/servicio_persona_registrar.js"></script>
+            <script src="../../js/persona/controlador_persona_registrar_fuera.js"></script>
+		</div>
+	</div>
+
+</body>
+
+</html>

@@ -5,8 +5,6 @@ let inputNombrehotel;
 let inputProvincia;
 let inputCanton;
 let inputDistrito;
-let inputPrimerNombre;
-let inputPrimerApellido;
 let inputTelefonohotel;
 let inputCorreo;
 let inputUbicacion;
@@ -21,8 +19,7 @@ inputNombrehotel = document.querySelector('#txtNombre');
 inputProvincia = document.querySelector('#txtProvincia');
 inputCanton = document.querySelector('#txtCanton');
 inputDistrito = document.querySelector('#txtDistrito');
-inputPrimerNombre = document.querySelector('#txtPrimerNombre');
-inputPrimerApellido = document.querySelector('#txtPrimerApellido');
+
 inputTelefonohotel = document.querySelector('#txtTelefono');
 inputCorreo = document.querySelector('#txtCorreo');
 desactivar = false;
@@ -200,13 +197,12 @@ function obtenerDatoshotel(){
     let sProvincia = inputProvincia.value;
     let sCanton = inputCanton.value;
     let sDistrito = inputDistrito.value;
-    let sPrimerNombre = inputPrimerNombre.value;
-    let sPrimerApellido = inputPrimerApellido.value;
+
     let sTelefono = Number(inputTelefonohotel.value);
     let sCorreo = inputCorreo.value;
     let sUbicacion = JSON.stringify({latitud: marker.getPosition().lat(), longitud: marker.getPosition().lng()});
 
-    infohotel.push(sNombrehotel, sProvincia, sCanton, sDistrito, sPrimerNombre, sPrimerApellido,sTelefono, sCorreo, sUbicacion, desactivar);
+    infohotel.push(sNombrehotel, sProvincia, sCanton, sDistrito, sTelefono, sCorreo, sUbicacion, desactivar);
     
     bError = validar();
     if(bError == true){
@@ -246,13 +242,11 @@ function actualizarDatoshotel(){
     let sProvincia = inputProvincia.value;
     let sCanton = inputCanton.value;
     let sDistrito = inputDistrito.value;
-    let sPrimerNombre = inputPrimerNombre.value;
-    let sPrimerApellido = inputPrimerApellido.value;
     let sTelefono = Number(inputTelefonohotel.value);
     let sCorreo = inputCorreo.value;
     let sUbicacion = JSON.stringify({latitud: marker.getPosition().lat(), longitud: marker.getPosition().lng()});
 
-    infohotel.push(sNombrehotel,  sProvincia, sCanton, sDistrito, sPrimerNombre, sPrimerApellido,sTelefono, sCorreo, sUbicacion, idhotel);
+    infohotel.push(sNombrehotel,  sProvincia, sCanton, sDistrito,sTelefono, sCorreo, sUbicacion, idhotel);
     
     bError = validar();
     if(bError == true){
@@ -321,20 +315,7 @@ function validar(){
     }else{
         inputCanton.classList.remove('error-input');
     }
-    //Validación del NombreContacto
-    if(inputPrimerNombre.value == '' ){
-        inputPrimerNombre.classList.add('error-input');
-        bError = true;
-    }else{
-        inputPrimerNombre.classList.remove('error-input');
-    }
-    //Validación del ApellidoContacto
-    if(inputPrimerApellido.value == '' ){
-        inputPrimerApellido.classList.add('error-input');
-        bError = true;
-    }else{
-        inputPrimerApellido.classList.remove('error-input');
-    }
+
 
     //Validación de la TelefonoContacto
     if(inputTelefonohotel.value == '' || (regexSoloNumeros.test(inputTelefonohotel.value) == false) ){
@@ -362,8 +343,6 @@ function limpiarFormulario(){
     inputProvincia.value = '';
     inputCanton.value = '';
     inputDistrito.value = '';
-    inputPrimerNombre.value = '';
-    inputPrimerApellido.value = '';
     inputTelefonohotel.value = '';
     inputCorreo.value = '';
     // inputUbicacion.value ='';
@@ -409,8 +388,7 @@ function imprimirListahotels() {
         let fila = tbody.insertRow();
 
         let cNombre = fila.insertCell();
-        let cPrimerNombre = fila.insertCell();
-        let cPrimerApellido = fila.insertCell();
+        let cProvincia = fila.insertCell();
         let cTelefono = fila.insertCell();
         let cCorreo = fila.insertCell();
         let cConfiguracion = fila.insertCell();
@@ -418,8 +396,7 @@ function imprimirListahotels() {
             
 
         cNombre.innerHTML = listahotels[i]['Nombre'];
-        cPrimerNombre.innerHTML = listahotels[i]['PrimerNombre'];
-        cPrimerApellido.innerHTML = listahotels[i]['PrimerApellido'];
+        cProvincia.innerHTML = listahotels[i]['Provincia'];
         cTelefono.innerHTML = listahotels[i]['Telefono'];
         cCorreo.innerHTML = listahotels[i]['Correo'];
 
@@ -479,8 +456,7 @@ function llenarDatosFormulario(){
         inputProvincia.value =  usuario.Provincia;
         inputCanton.value =  usuario.Canton;
         inputDistrito.value =  usuario.Distrito;
-        inputPrimerNombre.value =  usuario.PrimerNombre
-        inputPrimerApellido.value =  usuario.PrimerApellido;
+
         inputTelefonohotel.value =  usuario.Telefono;
         inputCorreo.value =  usuario.Correo;
         //inputUbicacion.value =  usuario['Ubicacion'];
