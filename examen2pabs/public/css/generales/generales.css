@@ -1,6 +1,6 @@
 /* Estilos generales -----------------------------------------------------------------*/
 html {
- background-image: url("../../img/fondo.gif");
+ background-image: url("../../img/fondi.jpg");
    /* background-repeat: no-repeat; */
   background-color: #000;
   /* opacity: .7; */
@@ -13,13 +13,12 @@ html {
   margin-top: 300px;
 }
 #contenedorPrincipal{
-  /* background-color: #fff; */
+
   min-height: 1500px;
   position: relative;
-  /* left: 0%; */
   opacity: .8;
   padding: 3%;
-  /* border-radius: 10px; */
+ 
 }
 .CPpositionOn{
   left: 0%;
@@ -123,7 +122,7 @@ p{
 /* Estilos header --------------------------------------------------------------*/
 
 .contactenosHeader{
-  background-color: #000;
+  background-color: #51cc4d;
   width: 100%;
   height: 85px;
   margin: 0;
@@ -173,33 +172,14 @@ box-shadow: 0px 5px 3px 0px #00000087;
   font-size: 1.5em;
   color: #fff;
 }
-/* .blanco{
-background-color: #ecf0f1;
-} */
+
 .fondo-blanco-inicioSesion{
   background-color: #ecf0f1;
   }
-/*
-.negro{
-color: #000;
-}
 
-#check:checked{
-  color: #fff;
-}*/
-
-/* .blanco, .blanco input [type='checkbox']
-{
-     background-color: #fff;
-}
-
-.negro, .negro input [type='checkbox']
-{
-    background-color: #000;
-} */
 
 .bars{
-  background-color: #000; 
+  background-color: rgb(16, 194, 46); 
   width: 100%;
   height: 100%; 
   position: absolute;
@@ -364,52 +344,6 @@ footer{
 
 
 
-/* ****** inicio: info cards del landing ****** */
-/* .card{
-  background: #fff;
-  width: 300px;
-  height:400px;
-  position: relative;
-  -webkit-box-shadow: 0px 5px 3px 0px #00000087;
-  -moz-box-shadow: 0px 5px 3px 0px #00000087;
-  box-shadow: 0px 5px 3px 0px #00000087; 
-}
-.perfilCard{
-}
-.perfilCard .img{
-  width: 65%;
-  height: 50%;
-  border-radius: 100%;
-  border: 5px solid #fbb803;
-  position: absolute;
-  left: 17%;
-  top: 5%;
-  overflow: hidden;
-}
-.mariaFoto{
-  width: 100%;
-  position: absolute;
-  bottom: -18%;
-}
-.logoContainer{
-  width: 40%;
-  margin: 0 auto;
-}
-.logoContainer img{
-  width: 84%;
-  position: absolute;
-  top: 64%;
-  left: 9%;
-}
-.btnConozcanos{
-  position: absolute;
-  top: 85%;
-  right: 35%;
-} */
-
-
-/* ****** fin: info cards del landing ****** */
-
 
 .info{
   width: 75%;
@@ -426,9 +360,9 @@ footer{
   
 }
 .card:hover{
-  -webkit-box-shadow: 0px 5px 3px 0px #6b6b6b;
-  -moz-box-shadow: 0px 5px 3px 0px #6b6b6b;
-  box-shadow: 0px 5px 3px 0px #6b6b6b; 
+  -webkit-box-shadow: 0px 5px 3px 0px #1fe018;
+  -moz-box-shadow: 0px 5px 3px 0px #1fe018;
+  box-shadow: 0px 5px 3px 0px #1fe018; 
 }
 .cardFoto{
   width: 50%;
@@ -439,7 +373,7 @@ footer{
 }
 .cardFoto h1{
   font-size: 10em;
-  color: #4b5154;
+  color: #71dd7f;
 }
 .cardLogo{
   width: 50%;
