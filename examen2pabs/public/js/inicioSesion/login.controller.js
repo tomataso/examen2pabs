@@ -122,7 +122,7 @@ function redireccionarUsuario() {
             break;
         case 2:
         // acciones de cliente
-            window.location.replace('../../html/general/index_cliente.html');
+            window.location.replace('../../html/general/index_hotel.html');
             break;  
         case 3:            
         // acciones de estudiante

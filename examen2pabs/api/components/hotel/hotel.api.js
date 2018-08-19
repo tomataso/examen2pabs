@@ -1,11 +1,10 @@
 'use strict';
 //para que se conecte a la base de datos de mongo, necesito de mongoose
-const clienteModel = require('./cliente.model');
+const hotelModel = require('./hotel.model');
 
 module.exports.registrar = function(req, res){
-    let nuevoCliente = new clienteModel({
+    let nuevoHotel = new hotelModel({
         Nombre : req.body.Nombre,
-        Cedula : req.body.Cedula,
         Provincia : req.body.Provincia,
         Distrito : req.body.Distrito,
         Canton : req.body.Canton,
@@ -16,14 +15,20 @@ module.exports.registrar = function(req, res){
         Desactivado : req.body.Desactivado,
         Contrasenna : req.body.Contrasenna,
         Ubicacion : req.body.Ubicacion,
-        TipoUsuario : 2
+        TipoUsuario : 2,
+
+        Comida : req.body.Comida,
+        Calidad : req.body.Calidad,
+        Habitaciones : req.body.Habitaciones,
+        Infraestructura: req.body.Infraestructura,
+        Limpieza: req.body.Limpieza,
     });
 
-    nuevoCliente.save(function(error){
+    nuevoHotel.save(function(error){
         if(error){
-            res.json({success : false, msg : 'No se pudo registrar el cliente, ha ocurrido un error' + error});
+            res.json({success : false, msg : 'No se pudo registrar el hotel, ha ocurrido un error' + error});
         }else{
-            res.json({success : true, msg : 'El cliente se registró con éxito'});
+            res.json({success : true, msg : 'El hotel se registró con éxito'});
         }
 
     });
@@ -31,21 +36,21 @@ module.exports.registrar = function(req, res){
 };
 
 module.exports.listar = function(req, res){
-    clienteModel.find().then(
-        function(clientes){
-            res.send(clientes);
+    hotelModel.find().then(
+        function(hoteles){
+            res.send(hoteles);
         });
 };
 
-module.exports.buscarCliente = function(req, res){
-    clienteModel.find(req.body.idCliente).then(
-        function(cliente){
-            res.send(cliente);
+module.exports.buscarhotel = function(req, res){
+    hotelModel.find(req.body.idHotel).then(
+        function(hotel){
+            res.send(hotel);
         });
 };
 
 module.exports.buscar_usuario_id = function (req,res){
-    clienteModel.findById({_id: req.body._id}).then(
+    hotelModel.findById({_id: req.body._id}).then(
         function(usuario){
             res.send(usuario); 
         }
@@ -53,8 +58,8 @@ module.exports.buscar_usuario_id = function (req,res){
 
 };
 
-module.exports.actualizar_cliente = function (req,res){
-    clienteModel.findByIdAndUpdate(req.body._id/*este id tiene que coincidir en postman, con o sin _*/, { $set: req.body},
+module.exports.actualizar_hotel = function (req,res){
+    hotelModel.findByIdAndUpdate(req.body._id/*este id tiene que coincidir en postman, con o sin _*/, { $set: req.body},
     function (err, user) {
         if (err) {
             res.json({ success: false, msg: 'No se ha actualizado.' + handleError(err) });
@@ -65,8 +70,8 @@ module.exports.actualizar_cliente = function (req,res){
     });
 };
 
-module.exports.cambiar_estado_cliente = function(req, res){
-    clienteModel.findByIdAndUpdate(req.body._id, { $set: req.body }, 
+module.exports.cambiar_estado_hotel = function(req, res){
+    hotelModel.findByIdAndUpdate(req.body._id, { $set: req.body }, 
         function(err, cliente) {
             if (err) {
                 res.json({ success: false, msg: 'No se ha actualizado.'+ handleError(err)});
@@ -79,7 +84,7 @@ module.exports.cambiar_estado_cliente = function(req, res){
 
 module.exports.desactivar = function(req, res){
     
-    clienteModel.update(
+    hotelModel.update(
         {_id: req.body._id}, 
         {
             Desactivado : req.body.Desactivado

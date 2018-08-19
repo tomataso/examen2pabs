@@ -23,27 +23,35 @@
 
 <body>
 
-	<div class="wrapper blanco">
+	<div class="wrapper">
 		<div class="menuCont">
 			<input type="checkbox" id="check" onclick="">
 			<label for="check" id="icone"><i class="fas fa-bars"></i></label>
 			<div class="bars">
 				<nav>
-					<a href="../proyecto/proyecto_listar_profesor.html" id="btnListarProyectosIndex"><div class="link">Proyectos</div></a>
-					<a href="../reporte/reporte_profesor.html" id="btnReporteIndex"><div class="link">Reporte horas estudiante</div></a>
-					<a href="../tiquete/tiquete_listar_profesor.html" id="btnListarTiquetesIndex"><div class="link">Tiquetes</div></a>
-					<a href="../mensaje/mensaje_crear.html" id="btnCrearMensajeIndex"><div class="link">Crear mensaje</div></a>
-					<a href="../mensaje/mensaje_recibido_listar.html" id="btnMensajesRecibidosIndex"><div class="link">Mensajes recibidos</div></a>	
-					<a href="../mensaje/mensaje_enviado_listar.html" id="btnMensajesEnviadosIndex"><div class="link">Mensajes enviados</div></a>
+					<a href="../usuario/usuario_listar.html" id="btnUsuariosIndex"><div class="link">Usuarios</div></a>
+					<a href="../profesor/profesor_registrar.html" id="btnRegistrarProfesorIndex"><div class="link">Registrar Vacionista</div></a>
+					<a href="../profesor/profesor_listar.html" id="btnListarProfesorIndex"><div class="link">Profesores</div></a>
+	
+					<a href="../hotel/hotel_registrar.html" id="btnRegistrarClienteIndex"><div class="link">Registrar Hotel</div></a>
+					<a href="../hotel/hotel_listar.html" id="btnListarClienteIndex"><div class="link">Hoteles</div></a>
 				</nav>
 			</div>
 		</div>
 
 		<div class="main">
-			<div id="contenedorPrincipal" class="CPpositionOff">
+			<div id="contenedorPrincipal" class="CPpositionOn">
 
-				<!-- Agregar wrapper aquí -->
+				<div class="wrapper"> 
+					<div class="tituloPrincipal divisor">
+						<h1><span> CENFOTEC </span>Hotel Reserve</h1>
+						<p class="slogan">Su casa para recibir calificaciones de hotel.</p>
+					</div>
+					
+					</div>
+				
 			</div>
+		</div>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.0.5/sweetalert2.all.js"></script>
 		<script src="https://code.jquery.com/jquery-3.3.1.min.js" 
 		integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
@@ -51,6 +59,7 @@
 		<script src="../../js/jquery-3.3.1.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
 		crossorigin="anonymous"></script>
+		<!-- Inicio Sesion -->
 		<script src="../../js/inicioSesion/login.service.js"></script>
 		<script src="../../js/inicioSesion/auth.service.js"></script>
 		<script src="../../js/inicioSesion/login.controller.js"></script>

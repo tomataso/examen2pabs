@@ -1,12 +1,12 @@
 function getListaUsuarios() {
-    let listaClientes = obtenerListaClientes();
+    let listaHoteles = obtenerListaHoteles();
     let listaProfesores = obtenerListaProfesores();
-    let listaEstudiantes = obtenerListaEstud();
+    
     let listaAdministrador = obtenerListaUsuarios();
     let listaUsuarios = [];
 
-    for (let i = 0; i < listaClientes.length; i++) {
-        listaUsuarios.push(listaClientes[i]);
+    for (let i = 0; i < listaHoteles.length; i++) {
+        listaUsuarios.push(listaHoteles[i]);
     }
  
     for (let i = 0; i < listaProfesores.length; i++) {
@@ -14,9 +14,6 @@ function getListaUsuarios() {
     }
 
 
-    for (let i = 0; i < listaEstudiantes.length; i++) {
-        listaUsuarios.push(listaEstudiantes[i]);
-    }    
 
     for (let i = 0; i < listaAdministrador.length; i++) {
         listaUsuarios.push(listaAdministrador[i]);
@@ -25,12 +22,12 @@ function getListaUsuarios() {
     return listaUsuarios;
 }
 
-function obtenerListaClientes(){
+function obtenerListaHoteles(){
     let lista = [];
 
     let respuesta = '';
     let peticion = $.ajax({
-        url : 'http://localhost:4000/api/listarClientes',
+        url : 'http://localhost:4000/api/listarHotel',
         type : 'get',
         contentType : 'application/x-www-form-urlencoded; charset=utf-8',
         dataType : 'json',
@@ -53,33 +50,7 @@ function obtenerListaClientes(){
     return lista;
 }
 
-function obtenerListaEstud (){
-    let lista = [];
 
-    let respuesta = '';
-    let peticion = $.ajax({
-        url : 'http://localhost:4000/api/mostrarEstud',
-        type : 'get',
-        contentType : 'application/x-www-form-urlencoded; charset=utf-8',
-        dataType : 'json',
-        async : false,
-        data:{
-            
-        }
-      });
-    
-      peticion.done(function(response){
-       respuesta = response;
-      });
-    
-      peticion.fail(function(response){
-       
-      });
-
-      return respuesta;
-    
-    return lista;
-}
 
 function obtenerListaProfesores(){
     let lista = [];
