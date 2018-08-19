@@ -14,7 +14,7 @@ const express = require('express'),
  * Se definen las variables necesarias para la conexión con MongoDB
  */
 let db = mongoose.connection,
-    dburl = 'mongodb://CodecUser:CodeC1234@ds163330.mlab.com:63330/db_codec',
+    dburl = 'mongodb://tomataso:TOmate13@ds143511.mlab.com:43511/examenpokemon',
     port = 4000;
 
 /**
@@ -63,37 +63,26 @@ app.use( function(req, res, next) {
  * Exportams todas las rutas dentro del index.js
  */
 
-const proyecto = require('./components/proyecto/proyecto.route');
-const proyectoEstudiante = require('./components/proyecto/estudiantep.route');
+
 const cliente = require('./components/cliente/cliente.route');
 const estudiante = require('./components/estud/estud.route');
 const profesor = require('./components/profesor/profesor.route');
-const sistema = require('./components/sistema/sistema.route');
-const tiquete = require('./components/tiquete/tiquete.route');
-const cursoI = require ('./components/cursosImpartidos/cursosI.route');
-const titulo = require('./components/titulos/titulos.route');
 const administrador = require('./components/usuario/usuario.route');
-const proyectoProfesor = require('./components/proyecto/profesorp.route');
-const mensaje = require('./components/mensaje/mensaje.route');
-const horas = require('./components/horas/horas.route');
+
+
 
 /**
  * Le indicamos que le de acceso externo a las rutas inicializadas
  */
 
-app.use('/api', proyecto);
-app.use('/api', proyectoEstudiante);
+
 app.use('/api', cliente);
 app.use('/api', estudiante);
 app.use('/api', profesor);
-app.use('/api', sistema);
-app.use('/api', tiquete);
-app.use('/api', cursoI);
-app.use('/api', titulo);
+
 app.use('/api', administrador);
-app.use('/api', proyectoProfesor);
-app.use('/api', mensaje);
-app.use('/api', horas);
+
+
 
 // Se guarda todo lo que se ha realizado
 module.exports = app;
