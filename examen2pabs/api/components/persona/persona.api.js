@@ -1,10 +1,10 @@
 'use strict';
 
-const ProfesorModel = require('./profesor.model');
+const personaModel = require('./persona.model');
 
 module.exports.registrar = function(req, res){
 
-    let nuevoProfesor = new ProfesorModel({
+    let nuevopersona = new personaModel({
 
         Nombre : req.body.Nombre,
         Apellido: req.body.Apellido,
@@ -21,21 +21,21 @@ module.exports.registrar = function(req, res){
         Aexperiencia :  req.body.Aexperiencia,
        
 
-        TipoProfesor : req.body.TipoProfesor,
+        Tipopersona : req.body.Tipopersona,
         Desactivado : req.body.Desactivado,
         Contrasenna : req.body.Contrasenna,
         TipoUsuario: 1,
 
-        FotoPerfilProfesor: req.body.FotoPerfilProfesor,
+        FotoPerfilpersona: req.body.FotoPerfilpersona,
 
         
     });
 
-    nuevoProfesor.save(function(error){
+    nuevopersona.save(function(error){
         if(error){
-            res.json({success : false, msg : 'No se pudo registrar al profesor, ha ocurrido un error' + error});
+            res.json({success : false, msg : 'No se pudo registrar al persona, ha ocurrido un error' + error});
         }else{
-            res.json({success : true, msg : 'El profesor se registró con éxito'});
+            res.json({success : true, msg : 'El persona se registró con éxito'});
         }
 
     });
@@ -43,40 +43,40 @@ module.exports.registrar = function(req, res){
 };
 
 module.exports.listar = function(req, res){
-    ProfesorModel.find().then(
-        function(profesores){
-            res.send(profesores);
+    personaModel.find().then(
+        function(personaes){
+            res.send(personaes);
         });
 };
 
 module.exports.desactivar = function(req, res){
     
-    ProfesorModel.update(
+    personaModel.update(
         {_id: req.body._id}, 
         {
             Desactivado : req.body.Desactivado
         },
         function(error){
             if(error){
-                res.json({success : false, msg : 'No se pudo eliminar el profesor, ocurrió el siguiente error' + error});
+                res.json({success : false, msg : 'No se pudo eliminar el persona, ocurrió el siguiente error' + error});
             }else{
-                res.json({success : true, msg : 'Se eliminó el profesor con éxito'});
+                res.json({success : true, msg : 'Se eliminó el persona con éxito'});
             }
         }
     )
 };
 
-module.exports.buscarProfesor = function(req, res){
-    ProfesorModel.find(req.body.Nombre).then(
-        function(profesor){
-            res.send(profesor);
+module.exports.buscarpersona = function(req, res){
+    personaModel.find(req.body.Nombre).then(
+        function(persona){
+            res.send(persona);
         });
 };
 
 
-module.exports.agregarGradoAcademicoProfesor = function (req, res) {
+module.exports.agregarGradoAcademicopersona = function (req, res) {
 
-    ProfesorModel.update(
+    personaModel.update(
         { _id: req.body._id },
         {
             $push:
@@ -91,17 +91,17 @@ module.exports.agregarGradoAcademicoProfesor = function (req, res) {
         },
         function (error) {
             if (error) {
-                res.json({ success: false, msg: 'No se pudo asociar el grado academico al profesor, ocurrió el siguiente error' + error });
+                res.json({ success: false, msg: 'No se pudo asociar el grado academico al persona, ocurrió el siguiente error' + error });
             } else {
-                res.json({ success: true, msg: 'El grado academico se registró con éxito en el profesor.' });
+                res.json({ success: true, msg: 'El grado academico se registró con éxito en el persona.' });
             }
         }
     )
 };
 
-module.exports.agregarCursosImpartidosProfesor = function (req, res) {
+module.exports.agregarCursosImpartidospersona = function (req, res) {
 
-    ProfesorModel.update(
+    personaModel.update(
         { _id: req.body._id },
         {
             $push:
@@ -116,9 +116,9 @@ module.exports.agregarCursosImpartidosProfesor = function (req, res) {
         },
         function (error) {
             if (error) {
-                res.json({ success: false, msg: 'No se pudo asociar el curso al profesor, ocurrió el siguiente error' + error });
+                res.json({ success: false, msg: 'No se pudo asociar el curso al persona, ocurrió el siguiente error' + error });
             } else {
-                res.json({ success: true, msg: 'El curso impartido se registró con éxito en el profesor.' });
+                res.json({ success: true, msg: 'El curso impartido se registró con éxito en el persona.' });
             }
         }
     )
@@ -127,8 +127,8 @@ module.exports.agregarCursosImpartidosProfesor = function (req, res) {
 
 
 
-module.exports.actualizarProfesor = function (req, res) {
-    ProfesorModel.findByIdAndUpdate(req.body._id,{
+module.exports.actualizarpersona = function (req, res) {
+    personaModel.findByIdAndUpdate(req.body._id,{
         Nombre : req.body.Nombre,
 
         Nombre : req.body.Nombre,
@@ -142,7 +142,7 @@ module.exports.actualizarProfesor = function (req, res) {
         Distrito : req.body.Distrito,
         DireccionExacta : req.body.DireccionExacta,
  
-        TipoProfesor : req.body.TipoProfesor,
+        Tipopersona : req.body.Tipopersona,
  
         Contrasenna : req.body.Contrasenna
 
@@ -160,7 +160,7 @@ module.exports.actualizarProfesor = function (req, res) {
 
 module.exports.borrarTitulo = function (req, res) {
     //                                                                    como lo escribo en la peticion en el body de la peticion
-    ProfesorModel.findByIdAndDelete({"_id": req.body._id, "GAcademico._id": req.body.idGradoAcademico},
+    personaModel.findByIdAndDelete({"_id": req.body._id, "GAcademico._id": req.body.idGradoAcademico},
         function (err, user) {
             if (err) {
                 res.json({ success: false, msg: 'No se ha desasignado el titulo.' + handleError(err) });

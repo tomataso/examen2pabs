@@ -40,17 +40,17 @@ let idObjeto = null;
 let listaObjetos = null;
 
     switch(pObjeto) {
-        case "cliente":
-            listaObjetos = listaClientes();
-            idObjeto = [listaObjetos[listaObjetos.length-1]['_id'],listaObjetos[listaObjetos.length-1]['Cedula'],"cliente"];
+        case "hotel":
+            listaObjetos = listahotels();
+            idObjeto = [listaObjetos[listaObjetos.length-1]['_id'],listaObjetos[listaObjetos.length-1]['Cedula'],"hotel"];
             break;
         case "estudiante":
             listaObjetos = listaEstudiantes();
             idObjeto = [listaObjetos[listaObjetos.length-1]['_id'],listaObjetos[listaObjetos.length-1]['Cedula'],"estudiante"];
             break;
-        case "profesor":
-            listaObjetos = listaProfesores();
-            idObjeto = [listaObjetos[listaObjetos.length-1]['_id'],listaObjetos[listaObjetos.length-1]['Cedula'],"profesor"];
+        case "persona":
+            listaObjetos = listapersonaes();
+            idObjeto = [listaObjetos[listaObjetos.length-1]['_id'],listaObjetos[listaObjetos.length-1]['Cedula'],"persona"];
             break;
     }
 

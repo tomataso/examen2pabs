@@ -1,30 +1,30 @@
 
 window.onload = function(){
 
-    let idCliente = obtenerIdCliente();
+    let idhotel = obtenerIdhotel();
     ftnDeshabilitarCampos();
-    llenarDatosFormulario(idCliente);
+    llenarDatosFormulario(idhotel);
 }; 
 
-function obtenerIdCliente() {
+function obtenerIdhotel() {
     return JSON.parse(sessionStorage.getItem("idFilaSeleccionado"));
  };
  
- const btnEditarCliente = document.querySelector('#btnEditar');
- const btnGuardarCliente = document.querySelector('#btnGuardar'); 
+ const btnEditarhotel = document.querySelector('#btnEditar');
+ const btnGuardarhotel = document.querySelector('#btnGuardar'); 
 
 function llenarDatosFormulario(idPersonaSeleccionada){ 
 
     let usuario = obtenerPersonaPorId(idPersonaSeleccionada);
     
-        inputNombreCliente.value =  usuario.Nombre;
-        inputCedulaCliente.value =  usuario.Cedula;
+        inputNombrehotel.value =  usuario.Nombre;
+        inputCedulahotel.value =  usuario.Cedula;
         inputProvincia.value =  usuario.Provincia;
         inputCanton.value =  usuario.Canton;
         inputDistrito.value =  usuario.Distrito;
         inputPrimerNombre.value =  usuario.PrimerNombre
         inputPrimerApellido.value =  usuario.PrimerApellido;
-        inputTelefonoCliente.value =  usuario.Telefono;
+        inputTelefonohotel.value =  usuario.Telefono;
         inputCorreo.value =  usuario.Correo;
         //inputUbicacion.value =  usuario['Ubicacion'];
         // console.log(usuario.Ubicacion);
@@ -32,13 +32,13 @@ function llenarDatosFormulario(idPersonaSeleccionada){
         showMapForUpdate(cordenadasMapa.latitud, cordenadasMapa.longitud);
             
         // imagen.src = usuario['foto']; //es un elemento tipo img, por eso es con src y no con value
-        idClientePorActualizar =  usuario._id;
+        idhotelPorActualizar =  usuario._id;
 };
 
-btnEditarCliente.addEventListener('click',function(){
+btnEditarhotel.addEventListener('click',function(){
 
-    btnGuardarCliente.classList.add('modificar');
-    btnGuardarCliente.classList.remove('modificar');
+    btnGuardarhotel.classList.add('modificar');
+    btnGuardarhotel.classList.remove('modificar');
     ftnHabilitarCampos();
     swal({
         type : 'success',
@@ -46,11 +46,11 @@ btnEditarCliente.addEventListener('click',function(){
         text: 'Modificar datos y dar click en botón \"Guardar\"',
         confirmButtonText : 'Entendido'
     });
-    btnEditarCliente.classList.add("hideMenu");
+    btnEditarhotel.classList.add("hideMenu");
     
 });
 
-btnGuardarCliente.addEventListener('click',function(){
+btnGuardarhotel.addEventListener('click',function(){
     
     const swalWithBootstrapButtons = swal.mixin({
         confirmButtonClass: 'btn btn-success',
@@ -59,7 +59,7 @@ btnGuardarCliente.addEventListener('click',function(){
       })
       
       swalWithBootstrapButtons({
-        title: 'Modificar cliente',
+        title: 'Modificar hotel',
         text: "¿Deseas guardar los cambios realizados?",
         type: 'warning',
         showCancelButton: true,
@@ -68,8 +68,8 @@ btnGuardarCliente.addEventListener('click',function(){
         reverseButtons: true
       }).then((result) => {
         if (result.value) {     
-            obtenerDatosParaModificarCliente();
-            btnEditarCliente.classList.remove("hideMenu");
+            obtenerDatosParaModificarhotel();
+            btnEditarhotel.classList.remove("hideMenu");
             
         } else if (
           // Read more about handling dismissals
@@ -81,32 +81,32 @@ btnGuardarCliente.addEventListener('click',function(){
             'error'
           )
             // ftnMostrarProyecto(proySeleccionado._id,obtenerProyectos());
-            llenarDatosFormulario(obtenerIdCliente());
+            llenarDatosFormulario(obtenerIdhotel());
             ftnDeshabilitarCampos();
             ftnQuitarValidaciones();
-            btnEditarCliente.classList.remove('modificar');
-            btnGuardarCliente.classList.add('modificar');
+            btnEditarhotel.classList.remove('modificar');
+            btnGuardarhotel.classList.add('modificar');
         }
       })    
 });
 
-function obtenerDatosParaModificarCliente(){
-    let infoCliente =[];
+function obtenerDatosParaModificarhotel(){
+    let infohotel =[];
     let bError = false;
 
-    let idCliente = obtenerIdCliente();
-    let sNombreCliente = inputNombreCliente.value;
-    let sCedula = Number(inputCedulaCliente.value);
+    let idhotel = obtenerIdhotel();
+    let sNombrehotel = inputNombrehotel.value;
+    let sCedula = Number(inputCedulahotel.value);
     let sProvincia = inputProvincia.value; 
     let sCanton = inputCanton.value;
     let sDistrito = inputDistrito.value;
     let sPrimerNombre = inputPrimerNombre.value;
     let sPrimerApellido = inputPrimerApellido.value;
-    let sTelefono = Number(inputTelefonoCliente.value);
+    let sTelefono = Number(inputTelefonohotel.value);
     let sCorreo = inputCorreo.value;
     let sUbicacion = JSON.stringify({latitud: marker.getPosition().lat(), longitud: marker.getPosition().lng()});
 
-    infoCliente.push(sNombreCliente, sCedula, sProvincia, sCanton, sDistrito, sPrimerNombre, sPrimerApellido,sTelefono, sCorreo, sUbicacion, idCliente);
+    infohotel.push(sNombrehotel, sCedula, sProvincia, sCanton, sDistrito, sPrimerNombre, sPrimerApellido,sTelefono, sCorreo, sUbicacion, idhotel);
     
     bError = validar();
     if(bError == true){
@@ -120,20 +120,20 @@ function obtenerDatosParaModificarCliente(){
                 ftnQuitarValidacionesClick();
             }
         );
-        console.log('No se pudo modificar el cliente');
+        console.log('No se pudo modificar el hotel');
     }else{
-        actualizarCliente(infoCliente);
+        actualizarhotel(infohotel);
         ftnDeshabilitarCampos();
-        btnEditarCliente.classList.remove('modificar');
-        btnGuardarCliente.classList.add('modificar');
+        btnEditarhotel.classList.remove('modificar');
+        btnGuardarhotel.classList.add('modificar');
         swal({
             type : 'success',
             title : 'Modificación exitosa',
-            text: 'El cliente se modificó adecuadamente',
+            text: 'El hotel se modificó adecuadamente',
             confirmButtonText : 'Entendido'
         });
 
-        window.location.replace('../../html/cliente/cliente_listar.html');
+        window.location.replace('../../html/hotel/hotel_listar.html');
 
     }
     
@@ -141,28 +141,28 @@ function obtenerDatosParaModificarCliente(){
 
 function ftnHabilitarCampos (){
 
-    inputNombreCliente.removeAttribute('disabled');
-    inputCedulaCliente.removeAttribute('disabled');
+    inputNombrehotel.removeAttribute('disabled');
+    inputCedulahotel.removeAttribute('disabled');
     inputProvincia.removeAttribute('disabled');
     inputCanton.removeAttribute('disabled');
     inputDistrito.removeAttribute('disabled');
     inputPrimerNombre.removeAttribute('disabled');
     inputPrimerApellido.removeAttribute('disabled');
-    inputTelefonoCliente.removeAttribute('disabled');
+    inputTelefonohotel.removeAttribute('disabled');
     inputCorreo.removeAttribute('disabled');
    
 };
 
 function ftnDeshabilitarCampos (){
 
-    inputNombreCliente.setAttribute('disabled',true);
-    inputCedulaCliente.setAttribute('disabled',true);
+    inputNombrehotel.setAttribute('disabled',true);
+    inputCedulahotel.setAttribute('disabled',true);
     inputProvincia.setAttribute('disabled',true);
     inputCanton.setAttribute('disabled',true);
     inputDistrito.setAttribute('disabled',true);
     inputPrimerNombre.setAttribute('disabled',true);
     inputPrimerApellido.setAttribute('disabled',true);
-    inputTelefonoCliente.setAttribute('disabled',true);
+    inputTelefonohotel.setAttribute('disabled',true);
     inputCorreo.setAttribute('disabled',true);
 
 };

@@ -54,10 +54,10 @@ function desactivarAdmin(pUsuario){
       return respuesta;
 }
 
-function desactivarProfesor(pUsuario){
+function desactivarpersona(pUsuario){
     let respuesta = '';
     let peticion = $.ajax({
-        url : 'http://localhost:4000/api/desactivarProfesor',
+        url : 'http://localhost:4000/api/desactivarpersona',
         type : 'post',
         contentType : 'application/x-www-form-urlencoded; charset=utf-8',
         dataType : 'json',
@@ -79,10 +79,10 @@ function desactivarProfesor(pUsuario){
       return respuesta;
 }
 
-function desactivarCliente(pUsuario){
+function desactivarhotel(pUsuario){
     let respuesta = '';
     let peticion = $.ajax({
-        url : 'http://localhost:4000/api/desactivarCliente',
+        url : 'http://localhost:4000/api/desactivarhotel',
         type : 'post',
         contentType : 'application/x-www-form-urlencoded; charset=utf-8',
         dataType : 'json',

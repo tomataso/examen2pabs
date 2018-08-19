@@ -46,9 +46,9 @@ function getUsuarioAutenticado() {
 function validarMenu (){
 
     let menuAdmi = ["Configuraciones generales","Usuarios",
-    "Registrar proyecto","Proyectos","Registrar profesor",
-    "Profesores","Registrar estudiante","Estudiantes",
-    "Registrar cliente","Clientes","Reporte horas estudiante",
+    "Registrar proyecto","Proyectos","Registrar persona",
+    "personaes","Registrar estudiante","Estudiantes",
+    "Registrar hotel","hotels","Reporte horas estudiante",
     "Tiquetes","Crear mensaje","Mensajes recibidos","Mensajes enviados"];
     let menuEstud = ["Proyectos","Reporte horas proyecto","Tiquetes",
     "Crear mensaje","Mensajes recibidos","Mensajes enviados"];

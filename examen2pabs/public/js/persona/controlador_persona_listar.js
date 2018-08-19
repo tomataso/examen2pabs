@@ -1,33 +1,33 @@
 'use strict';
-let inputBuscarProfesor;
-let tablaProfesores;
+let inputBuscarpersona;
+let tablapersonaes;
 
 //loads------------------------------------------------------
 window.onload = function(){
     showUserMenu();
-    initProfesor();
-    ListarProfesores();
+    initpersona();
+    Listarpersonaes();
 };
 
-function initProfesor() {
-    inputBuscarProfesor = document.querySelector('#inputBuscarProfesor');
-    tablaProfesores = document.querySelector('#tblProfesores');
+function initpersona() {
+    inputBuscarpersona = document.querySelector('#inputBuscarpersona');
+    tablapersonaes = document.querySelector('#tblpersonaes');
 
-    inputBuscarProfesor.addEventListener('keyup', function () { filtrarListaProfesores(); });
+    inputBuscarpersona.addEventListener('keyup', function () { filtrarListapersonaes(); });
 }
 
 //funciones--------------------------------------------------
-function ListarProfesores(){
-    let listaProfesor = obtenerListaProfesores();
+function Listarpersonaes(){
+    let listapersona = obtenerListapersonaes();
 
-    let tbody = document.querySelector('#tblProfesores tbody');
+    let tbody = document.querySelector('#tblpersonaes tbody');
     tbody.innerHTML = '';
 
    
 
-    for(let i = 0; i < listaProfesor.length; i++){
+    for(let i = 0; i < listapersona.length; i++){
         
-        if(listaProfesor[i]['Desactivado']){
+        if(listapersona[i]['Desactivado']){
             continue;
         } else{
 
@@ -36,26 +36,26 @@ function ListarProfesores(){
             let celdaCedula = fila.insertCell();
             let celdaNombre = fila.insertCell(); 
             let celdaApellido = fila.insertCell();
-            let celdaTipoProfesor =  fila.insertCell();
+            let celdaTipopersona =  fila.insertCell();
             let celdaTelefono = fila.insertCell();
             let celdaCorreo = fila.insertCell();
             let btns = fila.insertCell();
 
 
             let btnVer = document.createElement('a');
-            btnVer.name = listaProfesor[i]['_id'];
+            btnVer.name = listapersona[i]['_id'];
             btnVer.classList.add('fas');
             btnVer.classList.add('fa-eye');
-            btnVer.addEventListener('click', ftnMostrarProfesor);
+            btnVer.addEventListener('click', ftnMostrarpersona);
 
             
 
-            celdaCedula.innerHTML = listaProfesor[i]['Cedula'];
-            celdaNombre.innerHTML = listaProfesor[i]['Nombre'];
-            celdaApellido.innerHTML = listaProfesor[i]['Apellido'];
-            celdaTipoProfesor.innerHTML = listaProfesor[i]['TipoProfesor'];
-            celdaTelefono.innerHTML = listaProfesor[i]['Telefono'];
-            celdaCorreo.innerHTML = listaProfesor[i]['Correo'];
+            celdaCedula.innerHTML = listapersona[i]['Cedula'];
+            celdaNombre.innerHTML = listapersona[i]['Nombre'];
+            celdaApellido.innerHTML = listapersona[i]['Apellido'];
+            celdaTipopersona.innerHTML = listapersona[i]['Tipopersona'];
+            celdaTelefono.innerHTML = listapersona[i]['Telefono'];
+            celdaCorreo.innerHTML = listapersona[i]['Correo'];
 
             btns.appendChild(btnVer);
 
@@ -65,7 +65,7 @@ function ListarProfesores(){
 };
 
 // -----------------------------------------
-function ftnMostrarProfesor(){
+function ftnMostrarpersona(){
     let id = this.name;
     
     // en cual servicio esta esta funcion
@@ -75,7 +75,7 @@ function ftnMostrarProfesor(){
     
     switch (usuario.TipoUsuario) {
         case 0:
-            window.location.replace('../../html/profesor/profesor_mostrar.html');
+            window.location.replace('../../html/persona/persona_mostrar.html');
             break;
     
         default:
@@ -89,16 +89,16 @@ function ftnGuardarIdSeleccionado (pId){
 };
 //-------------------------------------------
 
-function filtrarListaProfesores(){
-    let criterioBusqueda = inputBuscarProfesor.value.toUpperCase();
-    let filasProfesores = tablaProfesores.getElementsByTagName('tr');
+function filtrarListapersonaes(){
+    let criterioBusqueda = inputBuscarpersona.value.toUpperCase();
+    let filaspersonaes = tablapersonaes.getElementsByTagName('tr');
     let datosFila = null;
     let datos = null;
     let valor = null;
     let coincide = false;
 
-    for (let i = 1; i < filasProfesores.length; i++) {    
-        datosFila = filasProfesores[i];
+    for (let i = 1; i < filaspersonaes.length; i++) {    
+        datosFila = filaspersonaes[i];
         datos = datosFila.getElementsByTagName('td');
         coincide = false;
 
@@ -123,10 +123,10 @@ function showUserMenu() {
             document.querySelector("#menuAdministrador").classList.remove("hideMenu");
             break;
         case 1:
-            document.querySelector("#menuProfesor").classList.remove("hideMenu");
+            document.querySelector("#menupersona").classList.remove("hideMenu");
             break;
         case 2:
-            document.querySelector("#menuCliente").classList.remove("hideMenu");
+            document.querySelector("#menuhotel").classList.remove("hideMenu");
             break;
         case 3:
             document.querySelector("#menuEstudiante").classList.remove("hideMenu");

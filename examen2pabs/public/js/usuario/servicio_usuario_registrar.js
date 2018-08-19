@@ -39,12 +39,12 @@ function registrarUsuario(pUsuario){
       return respuesta;
 }
 
-function listaProfesores(){
+function listapersonaes(){
     let lista = [];
 
     let respuesta = '';
     let peticion = $.ajax({
-        url : 'http://localhost:4000/api/listarProfesores',
+        url : 'http://localhost:4000/api/listarpersonaes',
         type : 'get',
         contentType : 'application/x-www-form-urlencoded; charset=utf-8',
         dataType : 'json',
@@ -67,12 +67,12 @@ function listaProfesores(){
     return lista;
 }
 
-function listaClientes(){
+function listahotels(){
     let lista = [];
 
     let respuesta = '';
     let peticion = $.ajax({
-        url : 'http://localhost:4000/api/listarClientes',
+        url : 'http://localhost:4000/api/listarhotels',
         type : 'get',
         contentType : 'application/x-www-form-urlencoded; charset=utf-8',
         dataType : 'json',

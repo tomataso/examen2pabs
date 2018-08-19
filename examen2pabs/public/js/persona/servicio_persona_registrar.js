@@ -2,30 +2,30 @@
 
 'use strict';
 
-function registrarProfesor(paInfoProfesor){
+function registrarpersona(paInfopersona){
     let respuesta = '';
     let contrasennaAutogenerada = ftnGeneradorContrasenna();
     let peticion = $.ajax({
-        url : 'http://localhost:4000/api/registrarProfesores',
+        url : 'http://localhost:4000/api/registrarpersonaes',
         type : 'post',
         contentType : 'application/x-www-form-urlencoded; charset=utf-8',
         dataType : 'json',
         async : false,
         data:{
-            Nombre: paInfoProfesor[0],
-            Apellido : paInfoProfesor[1],
-            Cedula : paInfoProfesor[2],
-            Telefono: paInfoProfesor[3],
-            Correo: paInfoProfesor [4],
-            Provincia : paInfoProfesor[5],
-            Canton : paInfoProfesor[6],
-            Distrito : paInfoProfesor[7],
-            DireccionExacta : paInfoProfesor[8],
-           // GAcademico : paInfoProfesor[9],
-            Aexperiencia : paInfoProfesor[9],
-            // CImpartidos : paInfoProfesor[11],
-            TipoProfesor : paInfoProfesor[10],
-            Desactivado : paInfoProfesor[11],
+            Nombre: paInfopersona[0],
+            Apellido : paInfopersona[1],
+            Cedula : paInfopersona[2],
+            Telefono: paInfopersona[3],
+            Correo: paInfopersona [4],
+            Provincia : paInfopersona[5],
+            Canton : paInfopersona[6],
+            Distrito : paInfopersona[7],
+            DireccionExacta : paInfopersona[8],
+           // GAcademico : paInfopersona[9],
+            Aexperiencia : paInfopersona[9],
+            // CImpartidos : paInfopersona[11],
+            Tipopersona : paInfopersona[10],
+            Desactivado : paInfopersona[11],
             Contrasenna: contrasennaAutogenerada,
         }
       });
@@ -44,12 +44,12 @@ function registrarProfesor(paInfoProfesor){
 
 
 
-function obtenerListaProfesores(){
-    let listaProfesores = [];
+function obtenerListapersonaes(){
+    let listapersonaes = [];
 
     let respuesta = '';
     let peticion = $.ajax({
-        url : 'http://localhost:4000/api/listarProfesores',
+        url : 'http://localhost:4000/api/listarpersonaes',
         type : 'get',
         contentType : 'application/x-www-form-urlencoded; charset=utf-8',
         dataType : 'json',
@@ -74,7 +74,7 @@ function obtenerListaProfesores(){
 
       return respuesta;
     
-    return listaProfesores;
+    return listapersonaes;
 }
 
 function ftnGeneradorContrasenna() {

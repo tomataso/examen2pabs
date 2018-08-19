@@ -80,11 +80,11 @@ function ftnDesactivarUsuario(){
                   break;
 
             case "1":
-                  desactivarProfesor(usuario)
+                  desactivarpersona(usuario)
                   break; 
 
             case "2":
-                  desactivarCliente(usuario)
+                  desactivarhotel(usuario)
                   break;
 
             case "3":
@@ -142,11 +142,11 @@ function ftnActivarUsuario(){
                   break;
 
             case "1":
-                  desactivarProfesor(usuario)
+                  desactivarpersona(usuario)
                   break; 
 
             case "2":
-                  desactivarCliente(usuario)
+                  desactivarhotel(usuario)
                   break;
 
             case "3":
@@ -214,11 +214,11 @@ function ftnTipoUsuario(pTipo) {
           break;
 
     case 1:
-          nombre = "Profesor";
+          nombre = "persona";
           break; 
 
     case 2:
-          nombre = "Cliente";
+          nombre = "hotel";
           break;
 
     case 3:

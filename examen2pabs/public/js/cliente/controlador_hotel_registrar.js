@@ -1,34 +1,34 @@
 'use strict';
 
-let inputNombreCliente;
-let inputCedulaCliente;
+let inputNombrehotel;
+let inputCedulahotel;
 let inputProvincia;
 let inputCanton;
 let inputDistrito;
 let inputPrimerNombre;
 let inputPrimerApellido;
-let inputTelefonoCliente;
+let inputTelefonohotel;
 let inputCorreo;
 let inputUbicacion;
 let desactivar;
 let inputId;
-let idClientePorActualizar;
+let idhotelPorActualizar;
 let idPersonaSeleccionada;
 
 
-inputNombreCliente = document.querySelector('#txtNombre');
-inputCedulaCliente = document.querySelector('#txtCedula');
+inputNombrehotel = document.querySelector('#txtNombre');
+inputCedulahotel = document.querySelector('#txtCedula');
 inputProvincia = document.querySelector('#txtProvincia');
 inputCanton = document.querySelector('#txtCanton');
 inputDistrito = document.querySelector('#txtDistrito');
 inputPrimerNombre = document.querySelector('#txtPrimerNombre');
 inputPrimerApellido = document.querySelector('#txtPrimerApellido');
-inputTelefonoCliente = document.querySelector('#txtTelefono');
+inputTelefonohotel = document.querySelector('#txtTelefono');
 inputCorreo = document.querySelector('#txtCorreo');
 desactivar = false;
 
-let botonRegistrar = document.querySelector('#btnRegistrarCliente');
-botonRegistrar.addEventListener('click' , obtenerDatosCliente);
+let botonRegistrar = document.querySelector('#btnRegistrarhotel');
+botonRegistrar.addEventListener('click' , obtenerDatoshotel);
 
 
 //---------------------------
@@ -191,43 +191,43 @@ let distritos = {
 // -------
 
 
-function obtenerDatosCliente(){
-    let infoCliente =[];
+function obtenerDatoshotel(){
+    let infohotel =[];
     let bError = false;
 
-    let sNombreCliente = inputNombreCliente.value;
-    let sCedula = Number(inputCedulaCliente.value);
+    let sNombrehotel = inputNombrehotel.value;
+    let sCedula = Number(inputCedulahotel.value);
     let sProvincia = inputProvincia.value;
     let sCanton = inputCanton.value;
     let sDistrito = inputDistrito.value;
     let sPrimerNombre = inputPrimerNombre.value;
     let sPrimerApellido = inputPrimerApellido.value;
-    let sTelefono = Number(inputTelefonoCliente.value);
+    let sTelefono = Number(inputTelefonohotel.value);
     let sCorreo = inputCorreo.value;
     let sUbicacion = JSON.stringify({latitud: marker.getPosition().lat(), longitud: marker.getPosition().lng()});
 
-    infoCliente.push(sNombreCliente, sCedula, sProvincia, sCanton, sDistrito, sPrimerNombre, sPrimerApellido,sTelefono, sCorreo, sUbicacion, desactivar);
+    infohotel.push(sNombrehotel, sCedula, sProvincia, sCanton, sDistrito, sPrimerNombre, sPrimerApellido,sTelefono, sCorreo, sUbicacion, desactivar);
     
     bError = validar();
     if(bError == true){
         swal({
             type : 'warning',
-            title : 'No se pudo registrar el cliente',
+            title : 'No se pudo registrar el hotel',
             /*text: 'Por favor revise los campos en rojo',*/
             confirmButtonText : 'Entendido'
         });
         
         console.log('No se pudo registrar el usuario');
     }else{
-        registrarCliente(infoCliente);
+        registrarhotel(infohotel);
         swal({
             type : 'success',
             title : 'Registro exitoso',
-            text: 'El cliente se registró adecuadamente',
+            text: 'El hotel se registró adecuadamente',
             confirmButtonText : 'Entendido'
         }).then(
             function(){
-                window.location.href = "../../html/cliente/cliente_listar.html"
+                window.location.href = "../../html/hotel/hotel_listar.html"
             }
         );
         limpiarFormulario();
@@ -236,45 +236,45 @@ function obtenerDatosCliente(){
 }
 
 
-function actualizarDatosCliente(){
-    let infoCliente =[];
+function actualizarDatoshotel(){
+    let infohotel =[];
     let bError = false;
 
-    let idCliente = idClientePorActualizar;
-    let sNombreCliente = inputNombreCliente.value;
-    let sCedula = Number(inputCedulaCliente.value);
+    let idhotel = idhotelPorActualizar;
+    let sNombrehotel = inputNombrehotel.value;
+    let sCedula = Number(inputCedulahotel.value);
     let sProvincia = inputProvincia.value;
     let sCanton = inputCanton.value;
     let sDistrito = inputDistrito.value;
     let sPrimerNombre = inputPrimerNombre.value;
     let sPrimerApellido = inputPrimerApellido.value;
-    let sTelefono = Number(inputTelefonoCliente.value);
+    let sTelefono = Number(inputTelefonohotel.value);
     let sCorreo = inputCorreo.value;
     let sUbicacion = JSON.stringify({latitud: marker.getPosition().lat(), longitud: marker.getPosition().lng()});
 
-    infoCliente.push(sNombreCliente, sCedula, sProvincia, sCanton, sDistrito, sPrimerNombre, sPrimerApellido,sTelefono, sCorreo, sUbicacion, idCliente);
+    infohotel.push(sNombrehotel, sCedula, sProvincia, sCanton, sDistrito, sPrimerNombre, sPrimerApellido,sTelefono, sCorreo, sUbicacion, idhotel);
     
     bError = validar();
     if(bError == true){
         swal({
             type : 'warning',
-            title : 'No se pudo actualizar el cliente',
+            title : 'No se pudo actualizar el hotel',
             /*text: 'Por favor revise los campos en rojo',*/
             confirmButtonText : 'Entendido'
         });
         
         console.log('No se pudo registrar el usuario');
     }else{
-        actualizarCliente(infoCliente);
+        actualizarhotel(infohotel);
         swal({
             type : 'success',
             title : 'Actualización exitosa',
-            text: 'La información del cliente ha sido actualizada',
+            text: 'La información del hotel ha sido actualizada',
             confirmButtonText : 'Entendido'
         }).then(
             function(){
-                obtenerPagina ('cliente/cliente_listar.html');
-                // window.location.href = "../../html/cliente/cliente_listar.html"
+                obtenerPagina ('hotel/hotel_listar.html');
+                // window.location.href = "../../html/hotel/hotel_listar.html"
             }
         );
         limpiarFormulario();
@@ -293,18 +293,18 @@ function validar(){
     
 
     //Validación del NombreEmpresa
-    if(inputNombreCliente.value == '' || (regexSoloLetras.test(inputNombreCliente.value)==false) ){
-        inputNombreCliente.classList.add('error-input');
+    if(inputNombrehotel.value == '' || (regexSoloLetras.test(inputNombrehotel.value)==false) ){
+        inputNombrehotel.classList.add('error-input');
         bError = true;
     }else{
-        inputNombreCliente.classList.remove('error-input');
+        inputNombrehotel.classList.remove('error-input');
     }
     //Validación de la CedulaJuridica
-    if(inputCedulaCliente.value == '' || (regexCedulaJuridica.test(inputCedulaCliente.value)==false) ){
-        inputCedulaCliente.classList.add('error-input');
+    if(inputCedulahotel.value == '' || (regexCedulaJuridica.test(inputCedulahotel.value)==false) ){
+        inputCedulahotel.classList.add('error-input');
         bError = true;
     }else{
-        inputCedulaCliente.classList.remove('error-input');
+        inputCedulahotel.classList.remove('error-input');
     }
      //Validación de la Distrito
      if(inputDistrito.value == ''){
@@ -343,11 +343,11 @@ function validar(){
     }
 
     //Validación de la TelefonoContacto
-    if(inputTelefonoCliente.value == '' || (regexSoloNumeros.test(inputTelefonoCliente.value) == false) ){
-        inputTelefonoCliente.classList.add('error-input');
+    if(inputTelefonohotel.value == '' || (regexSoloNumeros.test(inputTelefonohotel.value) == false) ){
+        inputTelefonohotel.classList.add('error-input');
         bError = true;
     }else{
-        inputTelefonoCliente.classList.remove('error-input');
+        inputTelefonohotel.classList.remove('error-input');
     }
 
     //Validación de la CorreoContacto
@@ -362,29 +362,29 @@ function validar(){
 }
 
 function limpiarFormulario(){
-    inputNombreCliente.value = '';    
-    inputCedulaCliente.value = '';
+    inputNombrehotel.value = '';    
+    inputCedulahotel.value = '';
     inputProvincia.value = '';
     inputCanton.value = '';
     inputDistrito.value = '';
     inputPrimerNombre.value = '';
     inputPrimerApellido.value = '';
-    inputTelefonoCliente.value = '';
+    inputTelefonohotel.value = '';
     inputCorreo.value = '';
     // inputUbicacion.value ='';
 }
 
-function FiltrarListaClientes (){
+function FiltrarListahotels (){
 
     let criterioBusqueda = inputBusqueda.value.toUpperCase();
-    let filasClientes = tblCliente.getElementsByTagName('tbody');
+    let filashotels = tblhotel.getElementsByTagName('tbody');
     let datosFila = null;
     let datos = null;
     let valor = null;
     let coincide = false;
 
-    for (let i = 1; i < filasClientes.length; i++) {    
-        datosFila = filasClientes[i];
+    for (let i = 1; i < filashotels.length; i++) {    
+        datosFila = filashotels[i];
         datos = datosFila.getElementsByTagName('tbody');
         coincide = false;
 
@@ -405,12 +405,12 @@ function FiltrarListaClientes (){
    
 };
 
-function imprimirListaClientes() {
-    let listaClientes = obtenerListaClientes();
-    let tbody = document.querySelector('#tblCliente tbody');
+function imprimirListahotels() {
+    let listahotels = obtenerListahotels();
+    let tbody = document.querySelector('#tblhotel tbody');
     tbody.innerHTML = '';
 
-    for(let i = 0; i < listaClientes.length; i++){
+    for(let i = 0; i < listahotels.length; i++){
         let fila = tbody.insertRow();
 
         let cNombre = fila.insertCell();
@@ -422,25 +422,25 @@ function imprimirListaClientes() {
 
             
 
-        cNombre.innerHTML = listaClientes[i]['Nombre'];
-        cPrimerNombre.innerHTML = listaClientes[i]['PrimerNombre'];
-        cPrimerApellido.innerHTML = listaClientes[i]['PrimerApellido'];
-        cTelefono.innerHTML = listaClientes[i]['Telefono'];
-        cCorreo.innerHTML = listaClientes[i]['Correo'];
+        cNombre.innerHTML = listahotels[i]['Nombre'];
+        cPrimerNombre.innerHTML = listahotels[i]['PrimerNombre'];
+        cPrimerApellido.innerHTML = listahotels[i]['PrimerApellido'];
+        cTelefono.innerHTML = listahotels[i]['Telefono'];
+        cCorreo.innerHTML = listahotels[i]['Correo'];
 
         //Íconos para editar
         let aModificar = document.createElement('a');
         aModificar.classList.add('fas');
         aModificar.classList.add('fa-eye');
-        aModificar.dataset._id =  listaClientes[i]['_id'];
+        aModificar.dataset._id =  listahotels[i]['_id'];
 
         let aBorrar = document.createElement('a');
         aBorrar.classList.add('fas');
         aBorrar.classList.add('fa-trash');
-        aBorrar.dataset._id =  listaClientes[i]['_id'];
+        aBorrar.dataset._id =  listahotels[i]['_id'];
 
         aModificar.addEventListener('click', llenarDatosFormulario); 
-        aBorrar.addEventListener('click', ftnEliminarCliente);
+        aBorrar.addEventListener('click', ftnEliminarhotel);
 
         cConfiguracion.appendChild(aModificar);
         cConfiguracion.appendChild(aBorrar);
@@ -462,31 +462,31 @@ function llenarDatosFormulario(){
 
 // ajax obtenerPaginaRegistro
     // obtenerPagina ('estudiante/indexRegEstud.html');
-    obtenerPagina('cliente/cliente_mostrar.html');
+    obtenerPagina('hotel/hotel_mostrar.html');
 
 
     
     setTimeout(function (){
 
-        let botonRegistrar = document.querySelector('#btnGuardarCliente');
-        let botonActualizarCliente = document.querySelector('#btnActualizarCliente');
+        let botonRegistrar = document.querySelector('#btnGuardarhotel');
+        let botonActualizarhotel = document.querySelector('#btnActualizarhotel');
 
         if (botonRegistrar != undefined) {
             botonRegistrar.hidden = true;
         }
     
-        if (botonActualizarCliente != undefined) {
-            botonActualizarCliente.hidden = false;
-            botonActualizarCliente.addEventListener('click', actualizarDatosCliente);
+        if (botonActualizarhotel != undefined) {
+            botonActualizarhotel.hidden = false;
+            botonActualizarhotel.addEventListener('click', actualizarDatoshotel);
         }
-        inputNombreCliente.value =  usuario.Nombre;
-        inputCedulaCliente.value =  usuario.Cedula;
+        inputNombrehotel.value =  usuario.Nombre;
+        inputCedulahotel.value =  usuario.Cedula;
         inputProvincia.value =  usuario.Provincia;
         inputCanton.value =  usuario.Canton;
         inputDistrito.value =  usuario.Distrito;
         inputPrimerNombre.value =  usuario.PrimerNombre
         inputPrimerApellido.value =  usuario.PrimerApellido;
-        inputTelefonoCliente.value =  usuario.Telefono;
+        inputTelefonohotel.value =  usuario.Telefono;
         inputCorreo.value =  usuario.Correo;
         //inputUbicacion.value =  usuario['Ubicacion'];
         // console.log(usuario.Ubicacion);
@@ -494,7 +494,7 @@ function llenarDatosFormulario(){
         showMapForUpdate(cordenadasMapa.latitud, cordenadasMapa.longitud);
             
         // imagen.src = usuario['foto']; //es un elemento tipo img, por eso es con src y no con value
-        idClientePorActualizar =  usuario._id;
+        idhotelPorActualizar =  usuario._id;
       
       }, 100);
     
@@ -503,8 +503,8 @@ function llenarDatosFormulario(){
 function borrarPersona(){ 
     let id = this.dataset._id;
     borrarPersonaPorId(id);
-    listaClientes = obtenerListaClientes();
-    imprimirListaClientes();
+    listahotels = obtenerListahotels();
+    imprimirListahotels();
 
 }
 

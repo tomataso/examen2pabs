@@ -117,17 +117,14 @@ function redireccionarUsuario() {
             window.location.replace('../../html/general/index_administrador.html');
             break;
         case 1:
-            // acciones de profesor
-            window.location.replace('../../html/general/index_profesor.html');
+            // acciones de persona
+            window.location.replace('../../html/general/index_persona.html');
             break;
         case 2:
-        // acciones de cliente
+        // acciones de hotel
             window.location.replace('../../html/general/index_hotel.html');
             break;  
-        case 3:            
-        // acciones de estudiante
-            window.location.replace('../../html/general/index_estudiante.html');
-            break;                                       
+                                              
         default:
             break;
     }

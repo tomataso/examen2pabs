@@ -1,28 +1,28 @@
 'use strict';
 showUserMenu();
 
-let botonRegistrar = document.querySelector('#btnRegistrarProfesor');
+let botonRegistrar = document.querySelector('#btnRegistrarpersona');
 
 if (botonRegistrar != undefined) {
-    botonRegistrar.addEventListener('click', obtenerDatosProfesor);
+    botonRegistrar.addEventListener('click', obtenerDatospersona);
 }
 
-const inputNombreProfesor = document.querySelector('#txtNombreProfesor');
-const inputApellidoProfesor = document.querySelector('#txtApellidoProfesor');
-const inputCedulaProfesor = document.querySelector('#txtCedulaProfesor');
-const inputTelefonoProfesor = document.querySelector('#txtTelefonoProfesor');
-const inputCorreoProfesor = document.querySelector('#txtCorreoProfesor');
+const inputNombrepersona = document.querySelector('#txtNombrepersona');
+const inputApellidopersona = document.querySelector('#txtApellidopersona');
+const inputCedulapersona = document.querySelector('#txtCedulapersona');
+const inputTelefonopersona = document.querySelector('#txtTelefonopersona');
+const inputCorreopersona = document.querySelector('#txtCorreopersona');
 
-//const  inputProvinciaProfesor = document.querySelector('#txtProvinciaProfesor');
-//const inputCantonProfesor = document.querySelector('#txtCantonProfesor');
-//const inputDistritoProfesor = document.querySelector('#txtDistritoProfesor');
-const inputDireccionExactaProfesor = document.querySelector('#txtDireccionExactaProfesor');
+//const  inputProvinciapersona = document.querySelector('#txtProvinciapersona');
+//const inputCantonpersona = document.querySelector('#txtCantonpersona');
+//const inputDistritopersona = document.querySelector('#txtDistritopersona');
+const inputDireccionExactapersona = document.querySelector('#txtDireccionExactapersona');
 
-//inputGAcademicoProfesor = document.querySelector('#txtGAcademico');
-const inputAExperienciaProfesor = document.querySelector('#txtAexperiencia');
-//inputCImpartidosProfesor = document.querySelector('#txtCImpartidos');
+//inputGAcademicopersona = document.querySelector('#txtGAcademico');
+const inputAExperienciapersona = document.querySelector('#txtAexperiencia');
+//inputCImpartidospersona = document.querySelector('#txtCImpartidos');
 
-const inputTipoProfesor = document.querySelector('#txtTipoProfesor'); //Como obtener los datos de un selection #txtTipoProfesor
+const inputTipopersona = document.querySelector('#txtTipopersona'); //Como obtener los datos de un selection #txtTipopersona
 
 //---------------------------
 
@@ -30,26 +30,26 @@ const inputTipoProfesor = document.querySelector('#txtTipoProfesor'); //Como obt
 /**
  * Select que contiene la lista de provincias
  */
-let inputProvinciaProfesor = elm("#txtProvinciaProfesor");
-listener(inputProvinciaProfesor, 'change', function () {
-    llenarSelect(inputCantonProfesor, inputProvinciaProfesor.value, cantones);
-    llenarSelect(inputDistritoProfesor, inputProvinciaProfesor.value, distritos);
+let inputProvinciapersona = elm("#txtProvinciapersona");
+listener(inputProvinciapersona, 'change', function () {
+    llenarSelect(inputCantonpersona, inputProvinciapersona.value, cantones);
+    llenarSelect(inputDistritopersona, inputProvinciapersona.value, distritos);
 
 });
 /**
  * Select que contiene la lista de provincias
  */
-let inputCantonProfesor = elm("#txtCantonProfesor");
-listener(inputCantonProfesor, 'change', function () {
-    llenarSelect(inputDistritoProfesor, inputCantonProfesor.value, distritos);
+let inputCantonpersona = elm("#txtCantonpersona");
+listener(inputCantonpersona, 'change', function () {
+    llenarSelect(inputDistritopersona, inputCantonpersona.value, distritos);
 
 
 });
 /**
  * Select que contiene la lista de distritos
  */
-let inputDistritoProfesor = elm('#txtDistritoProfesor');
-listener(inputDistritoProfesor, 'change', function () {
+let inputDistritopersona = elm('#txtDistritopersona');
+listener(inputDistritopersona, 'change', function () {
 
 });
 
@@ -183,51 +183,51 @@ let distritos = {
 
 // -------
 
-function obtenerDatosProfesor() {
+function obtenerDatospersona() {
 
-    let infoProfesor = [];
+    let infopersona = [];
     let bError = false;
 
-    let sNombre = inputNombreProfesor.value;
-    let sApellido = inputApellidoProfesor.value;
-    let sCedula = inputCedulaProfesor.value;
-    let sTelefono = inputTelefonoProfesor.value;
-    let sCorreo = inputCorreoProfesor.value;
+    let sNombre = inputNombrepersona.value;
+    let sApellido = inputApellidopersona.value;
+    let sCedula = inputCedulapersona.value;
+    let sTelefono = inputTelefonopersona.value;
+    let sCorreo = inputCorreopersona.value;
 
-    let sProvincia = inputProvinciaProfesor.value;
-    let sCanton = inputCantonProfesor.value;
-    let sDistrito = inputDistritoProfesor.value;
-    let sDireccionExacta = inputDireccionExactaProfesor.value;
+    let sProvincia = inputProvinciapersona.value;
+    let sCanton = inputCantonpersona.value;
+    let sDistrito = inputDistritopersona.value;
+    let sDireccionExacta = inputDireccionExactapersona.value;
 
-    // let sGAcademico = inputGAcademicoProfesor.value;
-    let sAexperiencia = Number(inputAExperienciaProfesor.value);
-    // let sCImpartidos = inputCImpartidosProfesor.value;
-    let sTipoProfesor = inputTipoProfesor.value;
+    // let sGAcademico = inputGAcademicopersona.value;
+    let sAexperiencia = Number(inputAExperienciapersona.value);
+    // let sCImpartidos = inputCImpartidospersona.value;
+    let sTipopersona = inputTipopersona.value;
     let sDesactivado = false;
 
 
-    infoProfesor.push(sNombre, sApellido, sCedula, sTelefono, sCorreo, sProvincia, sCanton, sDistrito, sDireccionExacta, sAexperiencia, sTipoProfesor, sDesactivado);
+    infopersona.push(sNombre, sApellido, sCedula, sTelefono, sCorreo, sProvincia, sCanton, sDistrito, sDireccionExacta, sAexperiencia, sTipopersona, sDesactivado);
 
-    bError = validarProfesor();
+    bError = validarpersona();
 
     if (bError == true) {
         swal({
             type: 'warning',
-            title: 'No se pudo registrar el profesor',
+            title: 'No se pudo registrar el persona',
             text: 'Por favor revise los campos en rojo',
             confirmButtonText: 'Entendido'
         });
-        console.log('No se pudo registrar el profesor');
+        console.log('No se pudo registrar el persona');
     } else {
-        registrarProfesor(infoProfesor);
+        registrarpersona(infopersona);
         swal({
             type: 'success',
             title: 'Registro exitoso',
-            text: 'El Profesor se registró adecuadamente',
+            text: 'El persona se registró adecuadamente',
             confirmButtonText: 'Entendido'
         }).then(
             function () {
-                obtenerPagina('profesor/profesor_listar.html');
+                obtenerPagina('persona/persona_listar.html');
             }
         );
         limpiarFormulario();
@@ -235,9 +235,9 @@ function obtenerDatosProfesor() {
 
 }
 
-function imprimirListaProfesores() {
-    let listaProfesores = obtenerListaProfesores();
-    let tbody = document.querySelector('#tblProfesor tbody');
+function imprimirListapersonaes() {
+    let listapersonaes = obtenerListapersonaes();
+    let tbody = document.querySelector('#tblpersona tbody');
     tbody.innerHTML = '';
 
     for (let i = 0; i < lista.length; i++) {
@@ -249,138 +249,138 @@ function imprimirListaProfesores() {
         let cCorreo = fila.insertCell();
         let cGAcademico = fila.insertCell();
 
-        cNombre.innerHTML = listaProfesores[i]['Nombre'];
-        cApellido.innerHTML = listaProfesores[i]['Apellido'];
-        cTelefono.innerHTML = listaProfesores[i]['Telefono'];
-        cCorreo.innerHTML = listaProfesores[i]['Correo'];
+        cNombre.innerHTML = listapersonaes[i]['Nombre'];
+        cApellido.innerHTML = listapersonaes[i]['Apellido'];
+        cTelefono.innerHTML = listapersonaes[i]['Telefono'];
+        cCorreo.innerHTML = listapersonaes[i]['Correo'];
         // Revisar si se puede poner varios.
-        //cGAcademico.innerHTML = listaProfesores[i]['GAcademico'];
+        //cGAcademico.innerHTML = listapersonaes[i]['GAcademico'];
 
     }
 
 };
 
 
-function validarProfesor() {
+function validarpersona() {
 
     let bError = false;
 
     let regexSoloLetras = /^[a-z A-ZáéíóúÁÉÍÓÚñÑ]+$/;
     let regexSoloNumeros = /^[0-9]{1,3}$/;
 
-    //Validación del Nombre Profesor
-    if (inputNombreProfesor.value == '' || (regexSoloLetras.test(inputNombreProfesor.value) == false)) {
-        inputNombreProfesor.classList.add('error-input');
+    //Validación del Nombre persona
+    if (inputNombrepersona.value == '' || (regexSoloLetras.test(inputNombrepersona.value) == false)) {
+        inputNombrepersona.classList.add('error-input');
         bError = true;
     } else {
-        inputNombreProfesor.classList.remove('error-input');
+        inputNombrepersona.classList.remove('error-input');
     }
 
-    //Validación del Apellido Profesor
-    if (inputApellidoProfesor.value == '' || (regexSoloLetras.test(inputApellidoProfesor.value) == false)) {
-        inputApellidoProfesor.classList.add('error-input');
+    //Validación del Apellido persona
+    if (inputApellidopersona.value == '' || (regexSoloLetras.test(inputApellidopersona.value) == false)) {
+        inputApellidopersona.classList.add('error-input');
         bError = true;
     } else {
-        inputApellidoProfesor.classList.remove('error-input');
+        inputApellidopersona.classList.remove('error-input');
     }
 
-    //Validación de la Cedula Profesor
-    if (inputCedulaProfesor.value == '') {
-        inputCedulaProfesor.classList.add('error-input');
+    //Validación de la Cedula persona
+    if (inputCedulapersona.value == '') {
+        inputCedulapersona.classList.add('error-input');
         bError = true;
     } else {
-        inputCedulaProfesor.classList.remove('error-input');
+        inputCedulapersona.classList.remove('error-input');
     }
 
-    //Validación de la Telefono Profesor
-    if (inputTelefonoProfesor.value == '') {
-        inputTelefonoProfesor.classList.add('error-input');
+    //Validación de la Telefono persona
+    if (inputTelefonopersona.value == '') {
+        inputTelefonopersona.classList.add('error-input');
         bError = true;
     } else {
-        inputTelefonoProfesor.classList.remove('error-input');
+        inputTelefonopersona.classList.remove('error-input');
     }
 
-    //Validación de la Correo Profesor
-    if (inputCorreoProfesor.value == '') {
-        inputCorreoProfesor.classList.add('error-input');
+    //Validación de la Correo persona
+    if (inputCorreopersona.value == '') {
+        inputCorreopersona.classList.add('error-input');
         bError = true;
     } else {
-        inputCorreoProfesor.classList.remove('error-input');
+        inputCorreopersona.classList.remove('error-input');
     }
 
 
 
     //Validación de la Provincia
-    if (inputProvinciaProfesor.value == '') {
-        inputProvinciaProfesor.classList.add('error-input');
+    if (inputProvinciapersona.value == '') {
+        inputProvinciapersona.classList.add('error-input');
         bError = true;
     } else {
-        inputProvinciaProfesor.classList.remove('error-input');
+        inputProvinciapersona.classList.remove('error-input');
     }
 
 
 
     //Validación de la Canton
-    if (inputCantonProfesor.value == '') {
-        inputCantonProfesor.classList.add('error-input');
+    if (inputCantonpersona.value == '') {
+        inputCantonpersona.classList.add('error-input');
         bError = true;
     } else {
-        inputCantonProfesor.classList.remove('error-input');
+        inputCantonpersona.classList.remove('error-input');
     }
 
     //Validación de la Distrito
-    if (inputDistritoProfesor.value == '') {
-        inputDistritoProfesor.classList.add('error-input');
+    if (inputDistritopersona.value == '') {
+        inputDistritopersona.classList.add('error-input');
         bError = true;
     } else {
-        inputDistritoProfesor.classList.remove('error-input');
+        inputDistritopersona.classList.remove('error-input');
     }
 
     //Validación de la Direccion Exacta
-    if (inputDireccionExactaProfesor.value == '') {
-        inputDireccionExactaProfesor.classList.add('error-input');
+    if (inputDireccionExactapersona.value == '') {
+        inputDireccionExactapersona.classList.add('error-input');
         bError = true;
     } else {
-        inputDireccionExactaProfesor.classList.remove('error-input');
+        inputDireccionExactapersona.classList.remove('error-input');
     }
 
 
 
     /* 
         //Validación del Grado Academico
-        if (inputGAcademicoProfesor.value == '') {
-            inputGAcademicoProfesor.classList.add('error-input');
+        if (inputGAcademicopersona.value == '') {
+            inputGAcademicopersona.classList.add('error-input');
             bError = true;
         } else {
-            inputGAcademicoProfesor.classList.remove('error-input');
+            inputGAcademicopersona.classList.remove('error-input');
         } */
 
     //Validación del Años de Experiencia
-    // Ponerle Validacion de Numeros || (regexSoloNumeros.test(inputTelefonoProfesor.value) == false)
+    // Ponerle Validacion de Numeros || (regexSoloNumeros.test(inputTelefonopersona.value) == false)
 
-    if (inputAExperienciaProfesor.value == '') {
-        inputAExperienciaProfesor.classList.add('error-input');
+    if (inputAExperienciapersona.value == '') {
+        inputAExperienciapersona.classList.add('error-input');
         bError = true;
     } else {
-        inputAExperienciaProfesor.classList.remove('error-input');
+        inputAExperienciapersona.classList.remove('error-input');
     }
 
     /*
     //Validación de Cursos Impartidos
-    if (inputCImpartidosProfesor.value == '') {
-        inputCImpartidosProfesor.classList.add('error-input');
+    if (inputCImpartidospersona.value == '') {
+        inputCImpartidospersona.classList.add('error-input');
         bError = true;
     } else {
-        inputCImpartidosProfesor.classList.remove('error-input');
+        inputCImpartidospersona.classList.remove('error-input');
     } */
 
 
-    //Validación de Tipo Profesores
-    if (inputTipoProfesor.value == 'default') {
-        inputTipoProfesor.classList.add('error-input');
+    //Validación de Tipo personaes
+    if (inputTipopersona.value == 'default') {
+        inputTipopersona.classList.add('error-input');
         bError = true;
     } else {
-        inputTipoProfesor.classList.remove('error-input');
+        inputTipopersona.classList.remove('error-input');
     }
 
     return bError;
@@ -390,21 +390,21 @@ function validarProfesor() {
 
 function limpiarFormulario() {
 
-    inputNombreProfesor.value = '';
-    inputApellidoProfesor.value = '';
-    inputCedulaProfesor.value = '';
-    inputTelefonoProfesor.value = '';
-    inputCorreoProfesor.value = '';
+    inputNombrepersona.value = '';
+    inputApellidopersona.value = '';
+    inputCedulapersona.value = '';
+    inputTelefonopersona.value = '';
+    inputCorreopersona.value = '';
 
 
-    inputProvinciaProfesor.value = '';
-    inputCantonProfesor.value = '';
-    inputDistritoProfesor.value = '';
-    inputDireccionExactaProfesor.value = '';
+    inputProvinciapersona.value = '';
+    inputCantonpersona.value = '';
+    inputDistritopersona.value = '';
+    inputDireccionExactapersona.value = '';
 
-    //inputGAcademicoProfesor.value = '';
-    inputAExperienciaProfesor.value = '';
-    //inputCImpartidosProfesor.value = '';
+    //inputGAcademicopersona.value = '';
+    inputAExperienciapersona.value = '';
+    //inputCImpartidospersona.value = '';
 }
 
 function showUserMenu() {
@@ -413,10 +413,10 @@ function showUserMenu() {
             document.querySelector("#menuAdministrador").classList.remove("hideMenu");
             break;
         case 1:
-            document.querySelector("#menuProfesor").classList.remove("hideMenu");
+            document.querySelector("#menupersona").classList.remove("hideMenu");
             break;
         case 2:
-            document.querySelector("#menuCliente").classList.remove("hideMenu");
+            document.querySelector("#menuhotel").classList.remove("hideMenu");
             break;
         case 3:
             document.querySelector("#menuEstudiante").classList.remove("hideMenu");

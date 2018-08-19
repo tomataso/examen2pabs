@@ -1,7 +1,7 @@
 'use strict';
 let mongoose = require('mongoose');
 
-let ProfesorSchema = new mongoose.Schema({
+let personaSchema = new mongoose.Schema({
 
     Nombre : {type : String, required : true},
     Apellido : {type : String, required : true},
@@ -16,32 +16,17 @@ let ProfesorSchema = new mongoose.Schema({
 
 
 
-    GAcademico: [
-        {
-            codigoTituloAcademico : {type : Number},
-            nombreTituloAcademico: { type: String}
-        }
-    ],
+   
 
-    Aexperiencia : {type : Number, required : true},
-
-    CImpartidos: [
-        {
-            codigoCursoI : {type : Number},
-            nombreCursoI: { type: String}
-        }
-    ],   
-
-
-    TipoProfesor : {type : String, required : true},
+    Tipopersona : {type : String, required : true},
     Desactivado : {type : Boolean, required : true}, 
     Contrasenna : {type: String, required: true},
 
     TipoUsuario: {type: Number, required: true},
 
-    FotoPerfilProfesor: { type: String }
+    FotoPerfilpersona: { type: String }
 
     
 });
 
-module.exports = mongoose.model('Profesor', ProfesorSchema);
+module.exports = mongoose.model('persona', personaSchema);

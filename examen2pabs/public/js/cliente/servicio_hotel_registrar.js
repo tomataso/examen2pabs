@@ -1,15 +1,15 @@
 'use strict';
 
-function actualizarEstadoCliente(pCliente, estado) {
+function actualizarEstadohotel(photel, estado) {
     let respuesta = '';
     let peticion = $.ajax({
-        url: 'http://localhost:4000/api/cambiar_estado_cliente',
+        url: 'http://localhost:4000/api/cambiar_estado_hotel',
         type: 'post',
         contentType: 'application/x-www-form-urlencoded; charset=utf-8',
         dataType: 'json',
         async: false,
         data: {
-            _id: pCliente._id,
+            _id: photel._id,
             Desactivado: estado,
         }
     });
@@ -27,12 +27,12 @@ function actualizarEstadoCliente(pCliente, estado) {
 }
 
 
-function obtenerListaClientes(){
+function obtenerListahotels(){
     let lista = [];
 
     let respuesta = '';
     let peticion = $.ajax({
-        url : 'http://localhost:4000/api/listarClientes',
+        url : 'http://localhost:4000/api/listarhotels',
         type : 'get',
         contentType : 'application/x-www-form-urlencoded; charset=utf-8',
         dataType : 'json',
@@ -55,28 +55,28 @@ function obtenerListaClientes(){
     return lista;
 }
 
-function registrarCliente(pCliente){
+function registrarhotel(photel){
     let respuesta = '';
     let contrasennaAutogenerada = ftnGeneradorContrasenna();
     let peticion = $.ajax({
-        url : 'http://localhost:4000/api/registrarCliente',
+        url : 'http://localhost:4000/api/registrarhotel',
         type : 'post',
         contentType : 'application/x-www-form-urlencoded; charset=utf-8',
         dataType : 'json',
         async : false,
         data:{
-            Nombre : pCliente[0],
-            Cedula : pCliente[1],
-            Provincia : pCliente[2],
-            Distrito : pCliente[3],
-            Canton : pCliente[4],
-            PrimerNombre : pCliente[5],
-            PrimerApellido : pCliente[6],
-            Telefono : pCliente[7],
-            Correo : pCliente[8],
-            Ubicacion : pCliente[9], 
+            Nombre : photel[0],
+            Cedula : photel[1],
+            Provincia : photel[2],
+            Distrito : photel[3],
+            Canton : photel[4],
+            PrimerNombre : photel[5],
+            PrimerApellido : photel[6],
+            Telefono : photel[7],
+            Correo : photel[8],
+            Ubicacion : photel[9], 
             Contrasenna: contrasennaAutogenerada,
-            Desactivado : pCliente[10],
+            Desactivado : photel[10],
         }
       });
     
@@ -91,27 +91,27 @@ function registrarCliente(pCliente){
       return respuesta;
 }
  
-function actualizarCliente(pCliente){
+function actualizarhotel(photel){
     let respuesta = '';
     // let contrasennaAutogenerada = ftnGeneradorContrasenna();
     let peticion = $.ajax({
-        url : 'http://localhost:4000/api/actualizar_cliente',
+        url : 'http://localhost:4000/api/actualizar_hotel',
         type : 'post',
         contentType : 'application/x-www-form-urlencoded; charset=utf-8',
         dataType : 'json',
         async : false,
         data:{
-            Nombre : pCliente[0],
-            Cedula : pCliente[1],
-            Provincia : pCliente[2],
-            Distrito : pCliente[3],
-            Canton : pCliente[4],
-            PrimerNombre : pCliente[5],
-            PrimerApellido : pCliente[6],
-            Telefono : pCliente[7],
-            Correo : pCliente[8],
-            Ubicacion : pCliente[9], 
-            _id : pCliente[10],
+            Nombre : photel[0],
+            Cedula : photel[1],
+            Provincia : photel[2],
+            Distrito : photel[3],
+            Canton : photel[4],
+            PrimerNombre : photel[5],
+            PrimerApellido : photel[6],
+            Telefono : photel[7],
+            Correo : photel[8],
+            Ubicacion : photel[9], 
+            _id : photel[10],
         }
       });
     
@@ -137,7 +137,7 @@ function ftnGeneradorContrasenna() {
     return retVal;
 }
 
-function actualizarPersona(pCliente){
+function actualizarPersona(photel){
     let respuesta = '';
     let peticion = $.ajax({
         url : 'http://localhost:4000/api/actualizar_usuario',
@@ -147,18 +147,18 @@ function actualizarPersona(pCliente){
         async : false,
         data:{
             _id : _pid,
-            Nombre : pCliente[0],
-            Cedula : pCliente[1],
-            Provincia : pCliente[2],
-            Distrito : pCliente[3],
-            Canton : pCliente[4],
-            PrimerNombre : pCliente[5],
-            PrimerApellido : pCliente[6],
-            Telefono : pCliente[7],
-            Correo : pCliente[8],
-            Ubicacion : pCliente[9], 
+            Nombre : photel[0],
+            Cedula : photel[1],
+            Provincia : photel[2],
+            Distrito : photel[3],
+            Canton : photel[4],
+            PrimerNombre : photel[5],
+            PrimerApellido : photel[6],
+            Telefono : photel[7],
+            Correo : photel[8],
+            Ubicacion : photel[9], 
             Contrasenna: contrasennaAutogenerada,
-            Desactivado : pCliente[10],
+            Desactivado : photel[10],
         }
       });
     

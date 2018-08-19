@@ -1,6 +1,6 @@
 function getListaUsuarios() {
     let listaHoteles = obtenerListaHoteles();
-    let listaProfesores = obtenerListaProfesores();
+    let listapersonaes = obtenerListapersonaes();
     
     let listaAdministrador = obtenerListaUsuarios();
     let listaUsuarios = [];
@@ -9,8 +9,8 @@ function getListaUsuarios() {
         listaUsuarios.push(listaHoteles[i]);
     }
  
-    for (let i = 0; i < listaProfesores.length; i++) {
-        listaUsuarios.push(listaProfesores[i]);
+    for (let i = 0; i < listapersonaes.length; i++) {
+        listaUsuarios.push(listapersonaes[i]);
     }
 
 
@@ -52,12 +52,12 @@ function obtenerListaHoteles(){
 
 
 
-function obtenerListaProfesores(){
+function obtenerListapersonaes(){
     let lista = [];
 
     let respuesta = '';
     let peticion = $.ajax({
-        url : 'http://localhost:4000/api/listarProfesores',
+        url : 'http://localhost:4000/api/listarpersonaes',
         type : 'get',
         contentType : 'application/x-www-form-urlencoded; charset=utf-8',
         dataType : 'json',

@@ -1,12 +1,11 @@
 'use strict';
 
-
-function obtenerListaProfesores(){
-    let listaProfesores = [];
+function obtenerListapersonaes(){
+    let lista = [];
 
     let respuesta = '';
     let peticion = $.ajax({
-        url : 'http://localhost:4000/api/listarProfesores',
+        url : 'http://localhost:4000/api/listarpersonaes',
         type : 'get',
         contentType : 'application/x-www-form-urlencoded; charset=utf-8',
         dataType : 'json',
@@ -26,36 +25,22 @@ function obtenerListaProfesores(){
 
       return respuesta;
     
-    return listaProfesores;
+    return lista;
 }
 
 
 
-
-function actualizarProfesorG(pProfesor){
+function desactivarpersona(ppersona){
     let respuesta = '';
     let peticion = $.ajax({
-        url : 'http://localhost:4000/api/actualizarProfesor',
+        url : 'http://localhost:4000/api/desactivarpersona',
         type : 'post',
         contentType : 'application/x-www-form-urlencoded; charset=utf-8',
         dataType : 'json',
         async : false,
         data:{
-            _id : pProfesor[0],
-            Nombre : pProfesor[1],
-            Apellido : pProfesor[2],
-            Cedula : pProfesor[3],
-            Telefono : pProfesor[4],
-            Correo : pProfesor[5],
-
-            Provincia : pProfesor[6],
-            Canton : pProfesor[7],
-            Distrito : pProfesor[8],
-            DireccionExacta : pProfesor[9],
-
-            Aexperiencia : pProfesor[10],
-            TipoProfesor : pProfesor[11],
-            Contrasenna : pProfesor[12]
+            _id : ppersona[0],
+            desactivado : ppersona[1]
         }
       });
     
@@ -68,5 +53,4 @@ function actualizarProfesorG(pProfesor){
       });
 
       return respuesta;
-};
-
+}

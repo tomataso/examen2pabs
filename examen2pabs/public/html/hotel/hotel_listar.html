@@ -35,11 +35,11 @@
 			<div class="bars">
         <nav>
 					<a href="../usuario/usuario_listar.html" id="btnUsuariosIndex"><div class="link">Usuarios</div></a>
-					<a href="../profesor/profesor_registrar.html" id="btnRegistrarProfesorIndex"><div class="link">Registrar Vacionista</div></a>
-					<a href="../profesor/profesor_listar.html" id="btnListarProfesorIndex"><div class="link">Profesores</div></a>
+					<a href="../persona/persona_registrar.html" id="btnRegistrarpersonaIndex"><div class="link">Registrar Vacionista</div></a>
+					<a href="../persona/persona_listar.html" id="btnListarpersonaIndex"><div class="link">personaes</div></a>
 	
-					<a href="../hotel/hotel_registrar.html" id="btnRegistrarClienteIndex"><div class="link">Registrar Hotel</div></a>
-					<a href="../hotel/hotel_listar.html" id="btnListarClienteIndex"><div class="link">Hoteles</div></a>
+					<a href="../hotel/hotel_registrar.html" id="btnRegistrarhotelIndex"><div class="link">Registrar Hotel</div></a>
+					<a href="../hotel/hotel_listar.html" id="btnListarhotelIndex"><div class="link">Hoteles</div></a>
 				</nav>
 			</div>
 		</div>
@@ -48,18 +48,18 @@
 			<div id="contenedorPrincipal" class="CPpositionOff">
         <!-- Agregar wrapper aquí -->
         <div class="wrapper">
-            <h3 class="titulo-lista">Clientes</h3>
+            <h3 class="titulo-lista">hotels</h3>
             <form action="">
               <div class=" field filtro">
-                <input type="text" name="inputBuscarCliente" id="inputBuscarCliente" placeholder="Búsqueda">
-                <label for="inputBuscarCliente">
+                <input type="text" name="inputBuscarhotel" id="inputBuscarhotel" placeholder="Búsqueda">
+                <label for="inputBuscarhotel">
                   <i class="fas fa-search"></i> Búsqueda</label>
               </div>
             </form>
-            <!-- <a href="#" class="buttonDash" onclick="obtenerPagina ('cliente/cliente_registrar.html')"> Registrar Cliente
+            <!-- <a href="#" class="buttonDash" onclick="obtenerPagina ('hotel/hotel_registrar.html')"> Registrar hotel
               <i class="fas fa-user-tie"></i>
             </a> -->
-            <!-- <table id="tblClientes">
+            <!-- <table id="tblhotels">
               <thead class="encabezados">
                 <th>Empresa</th>
                 <th>Nombre de Contacto</th>
@@ -72,7 +72,7 @@
               <tbody>
               </tbody>
 						</table> -->
-						<table id="tblClientes">
+						<table id="tblhotels">
               <thead class="encabezados">
                 <th>Empresa</th>
                 <th>Nombre de Contacto</th>
@@ -99,11 +99,11 @@
 		<script src="../../js/inicioSesion/auth.service.js"></script>
 		<script src="../../js/inicioSesion/login.controller.js"></script>
 		<!-- Servicio -->
-    <script src="../../js/cliente/servicio_cliente_listar.js"></script>
-    <script src="../../js/cliente/servicio_cliente_registrar.js"></script>
+    <script src="../../js/hotel/servicio_hotel_listar.js"></script>
+    <script src="../../js/hotel/servicio_hotel_registrar.js"></script>
 		<!-- Controlador -->
-		<script src="../../js/cliente/controlador_cliente_registrar.js"></script>
-		<script src="../../js/cliente/controlador_cliente_listar.js"></script>
+		<script src="../../js/hotel/controlador_hotel_registrar.js"></script>
+		<script src="../../js/hotel/controlador_hotel_listar.js"></script>
 		</div>
 	</div>
 

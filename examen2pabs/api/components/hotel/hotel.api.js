@@ -72,7 +72,7 @@ module.exports.actualizar_hotel = function (req,res){
 
 module.exports.cambiar_estado_hotel = function(req, res){
     hotelModel.findByIdAndUpdate(req.body._id, { $set: req.body }, 
-        function(err, cliente) {
+        function(err, hotel) {
             if (err) {
                 res.json({ success: false, msg: 'No se ha actualizado.'+ handleError(err)});
         

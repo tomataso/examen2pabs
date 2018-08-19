@@ -64,9 +64,9 @@ app.use( function(req, res, next) {
  */
 
 
-const cliente = require('./components/cliente/cliente.route');
+const hotel = require('./components/hotel/hotel.route');
 const estudiante = require('./components/estud/estud.route');
-const profesor = require('./components/profesor/profesor.route');
+const persona = require('./components/persona/persona.route');
 const administrador = require('./components/usuario/usuario.route');
 
 
@@ -76,9 +76,9 @@ const administrador = require('./components/usuario/usuario.route');
  */
 
 
-app.use('/api', cliente);
+app.use('/api', hotel);
 app.use('/api', estudiante);
-app.use('/api', profesor);
+app.use('/api', persona);
 
 app.use('/api', administrador);
 
