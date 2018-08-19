@@ -1,7 +1,7 @@
 'use strict';
 
 let inputNombrehotel;
-let inputCedulahotel;
+
 let inputProvincia;
 let inputCanton;
 let inputDistrito;
@@ -17,7 +17,7 @@ let idPersonaSeleccionada;
 
 
 inputNombrehotel = document.querySelector('#txtNombre');
-inputCedulahotel = document.querySelector('#txtCedula');
+
 inputProvincia = document.querySelector('#txtProvincia');
 inputCanton = document.querySelector('#txtCanton');
 inputDistrito = document.querySelector('#txtDistrito');
@@ -196,7 +196,7 @@ function obtenerDatoshotel(){
     let bError = false;
 
     let sNombrehotel = inputNombrehotel.value;
-    let sCedula = Number(inputCedulahotel.value);
+
     let sProvincia = inputProvincia.value;
     let sCanton = inputCanton.value;
     let sDistrito = inputDistrito.value;
@@ -206,7 +206,7 @@ function obtenerDatoshotel(){
     let sCorreo = inputCorreo.value;
     let sUbicacion = JSON.stringify({latitud: marker.getPosition().lat(), longitud: marker.getPosition().lng()});
 
-    infohotel.push(sNombrehotel, sCedula, sProvincia, sCanton, sDistrito, sPrimerNombre, sPrimerApellido,sTelefono, sCorreo, sUbicacion, desactivar);
+    infohotel.push(sNombrehotel, sProvincia, sCanton, sDistrito, sPrimerNombre, sPrimerApellido,sTelefono, sCorreo, sUbicacion, desactivar);
     
     bError = validar();
     if(bError == true){
@@ -242,7 +242,7 @@ function actualizarDatoshotel(){
 
     let idhotel = idhotelPorActualizar;
     let sNombrehotel = inputNombrehotel.value;
-    let sCedula = Number(inputCedulahotel.value);
+
     let sProvincia = inputProvincia.value;
     let sCanton = inputCanton.value;
     let sDistrito = inputDistrito.value;
@@ -252,7 +252,7 @@ function actualizarDatoshotel(){
     let sCorreo = inputCorreo.value;
     let sUbicacion = JSON.stringify({latitud: marker.getPosition().lat(), longitud: marker.getPosition().lng()});
 
-    infohotel.push(sNombrehotel, sCedula, sProvincia, sCanton, sDistrito, sPrimerNombre, sPrimerApellido,sTelefono, sCorreo, sUbicacion, idhotel);
+    infohotel.push(sNombrehotel,  sProvincia, sCanton, sDistrito, sPrimerNombre, sPrimerApellido,sTelefono, sCorreo, sUbicacion, idhotel);
     
     bError = validar();
     if(bError == true){
@@ -288,7 +288,7 @@ function validar(){
     let regexSoloLetras = /^[a-z A-ZáéíóúÁÉÍÓÚñÑ]+$/;
     let regexSoloNumeros = /^[0-9]{1,8}$/;
     let regexFormatoCorreo = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-    let regexCedulaJuridica = /^[0-9]{1,10}$/;
+  
 
     
 
@@ -299,13 +299,7 @@ function validar(){
     }else{
         inputNombrehotel.classList.remove('error-input');
     }
-    //Validación de la CedulaJuridica
-    if(inputCedulahotel.value == '' || (regexCedulaJuridica.test(inputCedulahotel.value)==false) ){
-        inputCedulahotel.classList.add('error-input');
-        bError = true;
-    }else{
-        inputCedulahotel.classList.remove('error-input');
-    }
+  
      //Validación de la Distrito
      if(inputDistrito.value == ''){
         inputDistrito.classList.add('error-input');
@@ -363,7 +357,8 @@ function validar(){
 
 function limpiarFormulario(){
     inputNombrehotel.value = '';    
-    inputCedulahotel.value = '';
+  
+
     inputProvincia.value = '';
     inputCanton.value = '';
     inputDistrito.value = '';
@@ -480,7 +475,7 @@ function llenarDatosFormulario(){
             botonActualizarhotel.addEventListener('click', actualizarDatoshotel);
         }
         inputNombrehotel.value =  usuario.Nombre;
-        inputCedulahotel.value =  usuario.Cedula;
+     
         inputProvincia.value =  usuario.Provincia;
         inputCanton.value =  usuario.Canton;
         inputDistrito.value =  usuario.Distrito;

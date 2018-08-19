@@ -75,8 +75,7 @@
                         <div class="wrapper">
                                     <h3 class="titulo-lista">Registro de persona</h3>
                                     
-                              
-                                    <!-- Se movio el Campo Cedula Arriba y se cambio a Type Number-->
+                            
                                     <div class="field">
                                                 <input type="number" id="txtCedulapersona" placeholder="Cedúla"></input>
                                                 <label for="txtCedulapersona">Cédula</label>
@@ -99,27 +98,11 @@
                                           <label for="txtTelefonopersona">Teléfono</label>
                                     </div>
                               
-                                     <!-- Se cambio Type de text a email-->
+                                     
                                     <div class="field">
                                           <input type="email" id="txtCorreopersona" placeholder="Correo Electrónico"></input>
                                           <label for="txtCorreopersona">Correo Electrónico</label>
                                     </div>
-                           <!--   
-                                    <div class="field">
-                                          <input type="text" id="txtProvinciapersona" placeholder="Provincia"></input>
-                                          <label for="txtProvinciapersona">Provincia</label>
-                                    </div>
-                              
-                                    <div class="field">
-                                          <input type="text" id="txtCantonpersona" placeholder="Canton"></input>
-                                          <label for="txtCantonpersona">Canton</label>
-                                    </div>
-                              
-                                    <div class="field">
-                                          <input type="text" id="txtDistritopersona" placeholder="Distrito"></input>
-                                          <label for="txtDistritopersona">Distrito</label>
-                                    </div>
-                              -->
 
                                     <div class="field">
                                           
@@ -133,7 +116,7 @@
                                               <option value="Puntarenas">Puntarenas</option>
                                               <option value="Limón">Limón</option>
                                           </select>
-                                          <label for="txtTipopersona">Provincia</label> 
+                                          <label for="txtSexo">Provincia</label> 
                                       </div>
 
                                       <div class="field" >
@@ -159,31 +142,19 @@
                               
                               
                                     <div class="field">
-                                          <input type="number" id="txtAexperiencia" placeholder="Años de Experiencia"></input>
-                                          <label for="txtAexperiencia">Años de Experiencia</label>
+                                          <input type="date" id="txtFechaNacimiento" placeholder="Fecha de Nacimiento"></input>
+                                          <label for="txtFechaNacimiento">Fecha de Nacimiento</label>
                                     </div>
                               
-                              <!-- 	Esto Se Registra en el Mostrar/Editar Perfil persona
-                                    <div class="field">
-                                                <input type="text" id="txtGAcademico" placeholder="Grado Académico"></input>
-                                                <label for="txtGAcademico">Grado Académico</label>
-                                    </div>
-                              
-                              
-                                    <div class="field">
-                                          <input type="text" id="txtCImpartidos" placeholder="Cursos Impartidos"></input>
-                                          <label for="txtCImpartidos">Cursos Impartidos</label>
-                                    </div>
-                               -->
+                     
                               
                                <div class="field">
-                                    <select id="txtTipopersona">
-                                          <option value="default" selected>Seleccione Tipo persona </option>
-                                          <option value="ambos">Ambos</option>
-                                          <option value="tecnico">Técnico</option>
-                                          <option value="lider">Líder</option>
+                                    <select id="txtSexo">
+                                          <option value="ambos">Secreto</option>
+                                          <option value="hombre">Hombre</option>
+                                          <option value="mujer">Mujer</option>
                                     </select>
-                                    <label for="txtTipopersona">Tipo de persona</label> 
+                                    <label for="txtSexo">Sexo</label> 
                               </div>
                               
                                     <button type="button" id="btnRegistrarpersona" class="btn-registrar">Registrar</button>

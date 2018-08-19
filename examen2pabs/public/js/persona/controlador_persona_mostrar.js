@@ -18,8 +18,8 @@ const inputCantonpersona = document.querySelector('#txtCantonpersona');
 const inputDistritopersona = document.querySelector('#txtDistritopersona');
 const inputDireccionExactapersona = document.querySelector('#txtDireccionExactapersona');
 
-const inputAExperienciapersona = document.querySelector('#txtAexperiencia');
-const inputTipopersona = document.querySelector('#txtTipopersona');
+const inputAExperienciapersona = document.querySelector('#txtFechaNacimiento');
+const inputTipopersona = document.querySelector('#txtSexo');
 const inputContrasennapersona = document.querySelector('#txtContrasenna');
 
 let personaSeleccionado = null;
@@ -342,7 +342,7 @@ function validarpersona() {
     }
 
 
-    //Validación del Años de Experiencia
+    //Validación del Fecha de Nacimiento
     // Ponerle Validacion de Numeros || (regexSoloNumeros.test(inputTelefonopersona.value) == false)
 
     if (inputAExperienciapersona.value == '') {

@@ -19,10 +19,10 @@ const inputCorreopersona = document.querySelector('#txtCorreopersona');
 const inputDireccionExactapersona = document.querySelector('#txtDireccionExactapersona');
 
 //inputGAcademicopersona = document.querySelector('#txtGAcademico');
-const inputAExperienciapersona = document.querySelector('#txtAexperiencia');
+const inputAExperienciapersona = document.querySelector('#txtFechaNacimiento');
 //inputCImpartidospersona = document.querySelector('#txtCImpartidos');
 
-const inputTipopersona = document.querySelector('#txtTipopersona'); //Como obtener los datos de un selection #txtTipopersona
+const inputTipopersona = document.querySelector('#txtSexo'); //Como obtener los datos de un selection #txtSexo
 
 //---------------------------
 
@@ -355,7 +355,7 @@ function validarpersona() {
             inputGAcademicopersona.classList.remove('error-input');
         } */
 
-    //Validación del Años de Experiencia
+    //Validación del Fecha de Nacimiento
     // Ponerle Validacion de Numeros || (regexSoloNumeros.test(inputTelefonopersona.value) == false)
 
     if (inputAExperienciapersona.value == '') {
