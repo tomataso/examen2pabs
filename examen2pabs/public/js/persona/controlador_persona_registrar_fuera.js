@@ -358,12 +358,7 @@ function validarpersona() {
     //Validación del Fecha de Nacimiento
     // Ponerle Validacion de Numeros || (regexSoloNumeros.test(inputTelefonopersona.value) == false)
 
-    if (inputAExperienciapersona.value == '') {
-        inputAExperienciapersona.classList.add('error-input');
-        bError = true;
-    } else {
-        inputAExperienciapersona.classList.remove('error-input');
-    }
+   
 
     /*
     //Validación de Cursos Impartidos
@@ -403,7 +398,7 @@ function limpiarFormulario() {
     inputDireccionExactapersona.value = '';
 
     //inputGAcademicopersona.value = '';
-    inputAExperienciapersona.value = '';
+    inputFechaN.value = '';
     //inputCImpartidospersona.value = '';
 }
 
